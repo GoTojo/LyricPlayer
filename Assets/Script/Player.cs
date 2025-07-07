@@ -6,9 +6,10 @@ public class Player : MonoBehaviour
 {
     private static SMFPlayer smfPlayer;
     private AudioSource audioSource;
+	public int songnum = 0;
 
     // Start is called before the first frame update
-    void Awake()
+	void Awake()
     {
         MidiWatcher midiWatcher = MidiWatcher.Instance;
         midiWatcher.onMidiIn += MIDIIn;
@@ -16,12 +17,16 @@ public class Player : MonoBehaviour
         midiWatcher.onTempoIn += TempoIn;
         midiWatcher.onBeatIn += BeatIn;
         midiWatcher.onMeasureIn += MeasureIn;
-        smfPlayer = new SMFPlayer($"{Application.streamingAssetsPath}/約束の場所へ.mid", 119);
+
+		SongInfo.SetCurSongnum(songnum);
+		smfPlayer = new SMFPlayer(SongInfo.GetSMFPath(), SongInfo.GetNumOfMeasure());
         smfPlayer.midiHandler = MidiWatcher.Instance;
         FontResource.Instance.LoadFont();
         SentenceList.Instance.Init(smfPlayer);
-        audioSource = GetComponent<AudioSource>();
-        AudioClip clip = Resources.Load<AudioClip>("Audio/約束の場所へ");
+		string clipname = SongInfo.GetAudioClipName();
+		// Debug.Log($"clipname = {clipname}");
+		audioSource = GetComponent<AudioSource>();
+		AudioClip clip = Resources.Load<AudioClip>(clipname);
         audioSource.clip = clip;
     }
 	void Start()

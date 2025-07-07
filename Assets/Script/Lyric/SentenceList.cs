@@ -14,10 +14,12 @@ public class ControlList {
 
 [Serializable]
 public struct LyricData {
+	public int measure;
 	public uint msec;
 	public string sentence;
 	public List<ControlList> beats;
-	public LyricData(uint msec, string sentence, int numofbeat) {
+	public LyricData(int measure, uint msec, string sentence, int numofbeat) {
+		this.measure = measure;
 		this.msec = msec;
 		this.sentence = sentence;
 		this.beats = new List<ControlList>();
@@ -64,7 +66,7 @@ public class SentenceList
 	{
 		eventMap = new MIDIEventMap();
 		eventMap.Init(player);
-		string path = $"{Application.streamingAssetsPath}/約束の場所へ.json";
+		string path = SongInfo.GetInfoPath();
 		if (File.Exists(path)) {
 			Load(path);
 		} else {
@@ -72,12 +74,9 @@ public class SentenceList
 			Save(path);
 		}
 	}
-	void Start()
-	{
-	}
 	public LyricData GetSentence(int track, int measure)
 	{
-		LyricData emptyData = new LyricData(0, "", 1);
+		LyricData emptyData = new LyricData(measure, 0, "", 1);
 		if (track < 1) return emptyData; // track0 is BeatTrack
 		if (track > tracks.Count) return emptyData;
 		Track trackData = tracks[track - 1];
@@ -96,10 +95,10 @@ public class SentenceList
 			var trackData = new Track(track);
 			for (var meas = 0; meas < numOfMeasure; meas++)
 			{
-				uint msec = (uint)eventMap.GetMsec(meas, track, 0);
+				uint msec = eventMap.GetMsec(meas);
 				string sentence = eventMap.GetSentence(meas, track);
 				SMFPlayer.Beat beat = eventMap.GetBeat(meas);
-				trackData.lyrics.Add(new LyricData(msec, sentence, beat.unit));
+				trackData.lyrics.Add(new LyricData(meas, msec, sentence, beat.unit));
 				// Debug.Log($"meas:{meas} {msec}:{sentence}");
 			}
 			tracks.Add(trackData);
