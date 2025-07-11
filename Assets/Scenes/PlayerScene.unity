@@ -214,7 +214,6 @@ GameObject:
   - component: {fileID: 136457272}
   - component: {fileID: 136457274}
   - component: {fileID: 136457273}
-  - component: {fileID: 136457275}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -241,9 +240,7 @@ MonoBehaviour:
   curPos: {fileID: 755094569}
   textPos: {fileID: 0}
   pointA: {fileID: 1593358460}
-  textA: {fileID: 0}
   pointB: {fileID: 1340273271}
-  textB: {fileID: 0}
 --- !u!4 &136457268
 Transform:
   m_ObjectHideFlags: 0
@@ -447,18 +444,6 @@ MonoBehaviour:
   vertical: 0
   maxLine: 5
   active: 1
---- !u!114 &136457275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136457266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d3ec96185e8b4e5f84fb22030c67789, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,9 +781,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 419019324}
-        m_TargetAssemblyTypeName: PlayPanel, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 136457267}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnRepeatClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

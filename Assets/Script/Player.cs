@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Callbacks;
 
 public class Player : MonoBehaviour {
 	private static SMFPlayer smfPlayer;
@@ -11,16 +12,17 @@ public class Player : MonoBehaviour {
 	public int songnum = 0;
 	public int measure = 0;
 	private uint currentMsec = 0;
-	private int posA = 0;
-	private int posB = 0;
 	public Button playButton;
 	public Button repeatButton;
 	public Slider curPos;
 	public TextMeshProUGUI textPos;
 	public Slider pointA;
-	public TextMeshProUGUI textA;
+	private TextMeshProUGUI textA;
 	public Slider pointB;
-	public TextMeshProUGUI textB;
+	private TextMeshProUGUI textB;
+	private bool fRepeat = false;
+	private Image playButtonImage;
+	private Image repeatButtonImage;
 
 	// Start is called before the first frame update
 	void Awake() {
@@ -59,7 +61,8 @@ public class Player : MonoBehaviour {
 		pointB.minValue = 1;
 		pointB.maxValue = numOfMeas;
 		pointB.value = numOfMeas;
-		posB = numOfMeas;
+		playButtonImage = playButton.GetComponent<Image>();
+		repeatButtonImage = repeatButton.GetComponent<Image>();
 	}
 	void Start() {
 	}
@@ -68,9 +71,15 @@ public class Player : MonoBehaviour {
 	void Update() {
 		smfPlayer.Update();
 		if (smfPlayer.isPlaying()) {
-			this.measure = smfPlayer.currentMeasure;
-			curPos.value = this.measure;
-			textPos.text = curPos.value.ToString();
+			measure = smfPlayer.currentMeasure;
+			if (fRepeat && measure >= pointB.value) {
+				PlayStop();
+				measure = (int)pointA.value;
+				PlayStart();
+			} else {
+				curPos.value = measure;
+				textPos.text = curPos.value.ToString();
+			}
 		}
 	}
 	public void MIDIIn(int track, byte[] midiEvent, float position, uint currentMsec) {
@@ -86,24 +95,32 @@ public class Player : MonoBehaviour {
 	public void EventIn(MIDIHandler.Event playerEvent) {
 		Debug.Log(playerEvent.ToString());
 	}
+	private void PlayStop() {
+		audioSource.Stop();
+		this.currentMsec = smfPlayer.currentMsec;
+		this.measure = smfPlayer.currentMeasure;
+		smfPlayer.Stop();
+		LyricGenList.Clear();
+	}
+	private void PlayStart() {
+		LyricData data = SentenceList.Instance.GetSentence(0, measure);
+		currentMsec = data.msec;
+		smfPlayer.Start(currentMsec);
+		audioSource.time = currentMsec / 1000f;
+		LyricGenList.Start(measure);
+		audioSource.Play();
+	}
 	public void OnPlayClicked() {
 		if (audioSource.isPlaying) {
-			audioSource.Stop();
-			this.currentMsec = smfPlayer.currentMsec;
-			this.measure = smfPlayer.currentMeasure;
-			smfPlayer.Stop();
-			LyricGenList.Clear();
+			PlayStop();
 		} else {
-			LyricData data = SentenceList.Instance.GetSentence(0, measure);
-			currentMsec = data.msec;
-			smfPlayer.Start(currentMsec);
-			audioSource.time = currentMsec / 1000f;
-			LyricGenList.Start(measure);
-			audioSource.Play();
+			PlayStart();
 		}
+		UpdatePlayButtonImage();
 	}
 	public void OnRepeatClicked() {
-		Debug.Log("Repeatボタンが押されたよ！！"); // コンソールに表示
+		fRepeat = !fRepeat;
+		repeatButtonImage.color = fRepeat ? Color.green : Color.gray;
 	}
 	public void OnCurPosChanged() {
 		measure = (int)curPos.value;
@@ -113,14 +130,15 @@ public class Player : MonoBehaviour {
 		if (pointA.value >= pointB.value) {
 			pointA.value = pointB.value - 1;
 		}
-		posA = (int)pointA.value;
 		if (textA) textA.text = pointA.value.ToString();
 	}
 	public void OnOutPosChanged() {
 		if (pointB.value <= pointA.value) {
 			pointB.value = pointA.value + 1;
 		}
-		posB = (int)pointB.value;
 		if (textB) textB.text = pointB.value.ToString();
+	}
+	public void UpdatePlayButtonImage() {
+		playButtonImage.color = smfPlayer.isPlaying() ? Color.green : Color.gray;
 	}
 }
