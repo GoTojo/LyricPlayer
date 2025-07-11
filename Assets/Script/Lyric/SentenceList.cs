@@ -77,7 +77,7 @@ public class SentenceList
 	public LyricData GetSentence(int track, int measure)
 	{
 		LyricData emptyData = new LyricData(measure, 0, "", 1);
-		if (track < 1) return emptyData; // track0 is BeatTrack
+		if (track < 1) track = 1; // track0 is BeatTrack
 		if (track > tracks.Count) return emptyData;
 		Track trackData = tracks[track - 1];
 		if (measure > trackData.lyrics.Count) return emptyData;

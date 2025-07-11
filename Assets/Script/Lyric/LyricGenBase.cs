@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.VisualScripting;
 using TMPro;
 using System;
+using System.Net.Http.Headers;
 
 public class LyricGenBase {
 	public bool active = false;
@@ -13,6 +14,23 @@ public class LyricGenBase {
 	private string sentence = "";
 	protected bool autoSizeTextContainer = false;
 	protected float fontSize = 12;
+	public int sentenceTrack = 1;
+	private bool sync = false;
+	public void Start(int meas) {
+		lastSentenceMeas = -1;
+		curMeas = meas;
+		string lastSentence = "";
+		for (int m = 0; m < meas; m++) {
+			LyricData lyricData = SentenceList.Instance.GetSentence(sentenceTrack, m);
+			if (lyricData.sentence.Length > 0) {
+				// Debug.Log($"{m}: {lyricData.sentence}");
+				lastSentence = lyricData.sentence;
+			}
+		}
+		sentence = lastSentence;
+		// Debug.Log($"sentence: {sentence}");
+		sync = true;
+	}
 	public LyricGenBase() {
 		MidiWatcher midiWatcher = MidiWatcher.Instance;
 		midiWatcher.onMidiIn += MIDIIn;
@@ -20,6 +38,7 @@ public class LyricGenBase {
 		midiWatcher.onBeatIn += BeatIn;
 		midiWatcher.onMeasureIn += MeasureIn;
 		midiWatcher.onEventIn += EventIn;
+		LyricGenList.lyricGens.Add(this);
 	}
 
 	public void Release() {
@@ -67,15 +86,20 @@ public class LyricGenBase {
 		lastSentenceMeas = measure;
 	}
 	public void LyricIn(int track, string lyric, float position, uint currentMsec) {
+		// Debug.Log($"LyricIn: {lyric}");
 		if (sentence.Length == 0) {
 			GetSentence(track, lastSentenceMeas);
 			if (sentence.Length == 0) {
 				GetSentence(track, lastSentenceMeas);
 			}
+			// Debug.Log($"getSentence: {lastSentenceMeas},{sentence}");
 			OnTextChanged(sentence);
 		}
-		if (sentence.Length >= lyric.Length) {
-			sentence = sentence.Substring(lyric.Length);
+		var index = sentence.IndexOf(lyric);
+		if (index >= 0) {
+			sentence = sentence.Substring(index + 1);
+		} else {
+			sentence = "";
 		}
 		OnLyricIn(track, lyric, position, currentMsec);
 	}
@@ -84,6 +108,7 @@ public class LyricGenBase {
 		OnBeatIn(numerator, denominator, currentMsec);
 	}
 	public void MeasureIn(int measure, int measureInterval, uint currentMsec) {
+		// Debug.Log($"measure:  {currentMsec}, {measure}");
 		curMeas = measure;
 		OnMeasureIn(measure, measureInterval, currentMsec);
 	}
@@ -91,10 +116,11 @@ public class LyricGenBase {
 		OnEventIn(playerEvent);
 	}
 
-	protected virtual void OnMIDIIn(int track, byte[] midiEvent, float position, uint currentMsec) { }
+	protected virtual void OnMIDIIn(int track, byte[] midiEvent, float position, uint currentMsec) {}
 	protected virtual void OnLyricIn(int track, string lyric, float position, uint currentMsec) {}
 	protected virtual void OnBeatIn(int numerator, int denominator, uint currentMsec) {}
 	protected virtual void OnMeasureIn(int measure, int measureInterval, uint currentMsec) {}
 	protected virtual void OnEventIn(MIDIHandler.Event playerEvent) {}
 	protected virtual void OnTextChanged(string sentence) {}
+	public virtual void Clear() {}
 }

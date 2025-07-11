@@ -57,6 +57,7 @@ public class MIDIEventMap : MIDIHandler {
 		while (player.Update(time)) {
 			time += 10;
 		}
+		player.Stop();
 		player.Reset();
 		player.mute = fLastMute;
 		player.midiHandler = backupHandler;

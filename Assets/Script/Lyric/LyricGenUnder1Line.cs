@@ -39,6 +39,9 @@ public class LyricGenUnder1Line : MonoBehaviour {
 				}
 			}
 		}
+		public override void Clear() {
+			text.text = "";
+		}
 	};
 	LyricGenControl control;
 

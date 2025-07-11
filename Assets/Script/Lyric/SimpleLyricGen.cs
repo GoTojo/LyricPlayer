@@ -55,7 +55,7 @@ public class SimpleLyricGen : MonoBehaviour {
 			lyricNum++;
 			waitClear = measureCount;
 		}
-		public void Clear() {
+		public override void Clear() {
 			foreach (var lyric in lyrics) {
 				Destroy(lyric);
 			}

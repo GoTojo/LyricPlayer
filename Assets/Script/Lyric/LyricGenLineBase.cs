@@ -80,7 +80,7 @@ class LyricGenLineBase : LyricGenBase {
 	}
 	protected virtual void GetPosition(ref float x, ref float y) {
 	}
-	public void Clear() {
+	public override void Clear() {
 		foreach (var lyric in lyrics) {
 			Object.Destroy(lyric);
 		}
