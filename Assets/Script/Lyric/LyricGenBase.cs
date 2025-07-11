@@ -15,7 +15,6 @@ public class LyricGenBase {
 	protected bool autoSizeTextContainer = false;
 	protected float fontSize = 12;
 	public int sentenceTrack = 1;
-	private bool sync = false;
 	public void Start(int meas) {
 		lastSentenceMeas = -1;
 		curMeas = meas;
@@ -29,7 +28,6 @@ public class LyricGenBase {
 		}
 		sentence = lastSentence;
 		// Debug.Log($"sentence: {sentence}");
-		sync = true;
 	}
 	public LyricGenBase() {
 		MidiWatcher midiWatcher = MidiWatcher.Instance;

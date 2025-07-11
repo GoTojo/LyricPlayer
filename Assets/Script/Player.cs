@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour {
 	private static SMFPlayer smfPlayer;
@@ -9,6 +11,16 @@ public class Player : MonoBehaviour {
 	public int songnum = 0;
 	public int measure = 0;
 	private uint currentMsec = 0;
+	private int posA = 0;
+	private int posB = 0;
+	public Button playButton;
+	public Button repeatButton;
+	public Slider curPos;
+	public TextMeshProUGUI textPos;
+	public Slider pointA;
+	public TextMeshProUGUI textA;
+	public Slider pointB;
+	public TextMeshProUGUI textB;
 
 	// Start is called before the first frame update
 	void Awake() {
@@ -29,6 +41,25 @@ public class Player : MonoBehaviour {
 		audioSource = GetComponent<AudioSource>();
 		AudioClip clip = Resources.Load<AudioClip>(clipname);
 		audioSource.clip = clip;
+		textPos = curPos.handleRect.GetComponentInChildren<TextMeshProUGUI>();
+		textPos.text = curPos.value.ToString();
+		textA = pointA.handleRect.GetComponentInChildren<TextMeshProUGUI>();
+		textA.text = pointA.value.ToString();
+		textB = pointB.handleRect.GetComponentInChildren<TextMeshProUGUI>();
+		textB.text = pointB.value.ToString();
+		int numOfMeas = SongInfo.GetNumOfMeasure();
+		if (numOfMeas < 0) {
+			numOfMeas = SentenceList.Instance.tracks[0].lyrics.Count;
+		}
+		curPos.minValue = 0;
+		curPos.maxValue = numOfMeas;
+		pointA.minValue = 0;
+		pointA.maxValue = numOfMeas - 1;
+		pointA.value = 0;
+		pointB.minValue = 1;
+		pointB.maxValue = numOfMeas;
+		pointB.value = numOfMeas;
+		posB = numOfMeas;
 	}
 	void Start() {
 	}
@@ -36,6 +67,11 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		smfPlayer.Update();
+		if (smfPlayer.isPlaying()) {
+			this.measure = smfPlayer.currentMeasure;
+			curPos.value = this.measure;
+			textPos.text = curPos.value.ToString();
+		}
 	}
 	public void MIDIIn(int track, byte[] midiEvent, float position, uint currentMsec) {
 	}
@@ -70,12 +106,21 @@ public class Player : MonoBehaviour {
 		Debug.Log("Repeatボタンが押されたよ！！"); // コンソールに表示
 	}
 	public void OnCurPosChanged() {
-		Debug.Log("スライダ変わったよ"); // コンソールに表示
+		measure = (int)curPos.value;
+		if (textPos) textPos.text = curPos.value.ToString();
 	}
 	public void OnInPosChanged() {
-		Debug.Log("スライダ変わったよ"); // コンソールに表示
+		if (pointA.value >= pointB.value) {
+			pointA.value = pointB.value - 1;
+		}
+		posA = (int)pointA.value;
+		if (textA) textA.text = pointA.value.ToString();
 	}
 	public void OnOutPosChanged() {
-		Debug.Log("スライダ変わったよ"); // コンソールに表示
+		if (pointB.value <= pointA.value) {
+			pointB.value = pointA.value + 1;
+		}
+		posB = (int)pointB.value;
+		if (textB) textB.text = pointB.value.ToString();
 	}
 }
