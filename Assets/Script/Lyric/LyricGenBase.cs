@@ -93,7 +93,7 @@ public class LyricGenBase {
 			// Debug.Log($"getSentence: {lastSentenceMeas},{sentence}");
 			OnTextChanged(sentence);
 		}
-		var index = sentence.IndexOf(lyric);
+		var index = sentence.IndexOf(lyric, StringComparison.Ordinal);
 		if (index >= 0) {
 			sentence = sentence.Substring(index + 1);
 		} else {

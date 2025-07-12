@@ -107,7 +107,9 @@ public class Player : MonoBehaviour {
 		currentMsec = data.msec;
 		smfPlayer.Start(currentMsec);
 		audioSource.time = currentMsec / 1000f;
-		LyricGenList.Start(measure);
+		if (measure > 0) {
+			LyricGenList.Start(measure);
+		}
 		audioSource.Play();
 	}
 	public void OnPlayClicked() {
