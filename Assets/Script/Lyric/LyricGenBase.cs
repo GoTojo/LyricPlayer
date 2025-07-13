@@ -18,15 +18,14 @@ public class LyricGenBase {
 	public void Start(int meas) {
 		lastSentenceMeas = -1;
 		curMeas = meas;
-		string lastSentence = "";
-		for (int m = 0; m <= meas; m++) {
-			LyricData lyricData = SentenceList.Instance.GetSentence(sentenceTrack, m);
-			if (lyricData.sentence.Length > 0) {
-				// Debug.Log($"{m}: {lyricData.sentence}");
-				lastSentence = lyricData.sentence;
-			}
+		for (int m = 0; m < meas; m++) {
+			SentenceList.Instance.GetSentence(sentenceTrack, m);
+			// LyricData lyricData = SentenceList.Instance.GetSentence(sentenceTrack, m);
+			// if (lyricData.sentence.Length > 0) {
+			// 	Debug.Log($"{m}: {lyricData.sentence}");
+			// }
 		}
-		sentence = lastSentence;
+		sentence = "";
 		OnTextChanged(sentence);
 		// Debug.Log($"sentence: {sentence}");
 	}
