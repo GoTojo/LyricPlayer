@@ -104,12 +104,12 @@ public class Player : MonoBehaviour {
 	}
 	private void PlayStart() {
 		LyricData data = SentenceList.Instance.GetSentence(0, measure);
-		currentMsec = data.msec;
-		smfPlayer.Start(currentMsec);
-		audioSource.time = currentMsec / 1000f;
 		if (measure > 0) {
 			LyricGenList.Start(measure);
 		}
+		currentMsec = data.msec;
+		smfPlayer.Start(currentMsec);
+		audioSource.time = currentMsec / 1000f;
 		audioSource.Play();
 	}
 	public void OnPlayClicked() {

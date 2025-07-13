@@ -19,7 +19,7 @@ public class LyricGenBase {
 		lastSentenceMeas = -1;
 		curMeas = meas;
 		string lastSentence = "";
-		for (int m = 0; m < meas; m++) {
+		for (int m = 0; m <= meas; m++) {
 			LyricData lyricData = SentenceList.Instance.GetSentence(sentenceTrack, m);
 			if (lyricData.sentence.Length > 0) {
 				// Debug.Log($"{m}: {lyricData.sentence}");
@@ -27,6 +27,7 @@ public class LyricGenBase {
 			}
 		}
 		sentence = lastSentence;
+		OnTextChanged(sentence);
 		// Debug.Log($"sentence: {sentence}");
 	}
 	public LyricGenBase() {
