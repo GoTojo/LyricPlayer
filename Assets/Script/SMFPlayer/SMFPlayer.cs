@@ -121,15 +121,12 @@ public class SMFPlayer
 		}
 		midiHandler.EventIn(MIDIHandler.Event.Start);
 		Reset();
-		UInt32 nexttime = tickup();
-		if (nexttime == UInt32.MaxValue) {
-			return false;
-		}
 		if (_startTime > 0) {
 			mute = true;
-			Update(_startTime);
+			Update(_startTime - 1);
 			mute = false;
 		}
+		Update(_startTime);
 		startTime = _startTime;
 		stopWatch.Start();
 		playing = true;
