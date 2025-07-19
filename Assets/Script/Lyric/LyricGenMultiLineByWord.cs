@@ -43,7 +43,7 @@ public class LyricGenMultiLineByWord : MonoBehaviour {
 		protected override void OnTextChanged(string sentence) {
 			if (line >= maxLine) {
 				Clear();
-			} else {
+			} else if (numOfWord != 0) {
 				numOfWord = 0;
 				line++;
 			}
