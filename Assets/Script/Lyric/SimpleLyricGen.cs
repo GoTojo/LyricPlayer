@@ -107,7 +107,4 @@ public class SimpleLyricGen : MonoBehaviour {
 		control.rotateAngle = rotateAngle;
 		control.font = font;
 	}
-	public void SetActive(bool f) {
-		active = f;
-	}
 }

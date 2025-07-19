@@ -58,17 +58,13 @@ public class LyricGenMultiLine : MonoBehaviour {
 		control.maxLine = maxLine;
 		control.scale = scale;
 		control.vertical = vertical;
-		control.active = active;
+		if (control.active != active) {
+			control.Clear();
+			control.active = active;
+		}
 	}
 
 	public void Clear() {
 		control.Clear();
-	}
-
-	public void SetActive(bool f) {
-		control.Clear();
-		active = f;
-		control.active = f;
-		control.vertical = vertical;
 	}
 }
