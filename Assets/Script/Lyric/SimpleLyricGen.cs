@@ -14,11 +14,11 @@ public class SimpleLyricGen : MonoBehaviour {
 	public bool active = false;
 	class LyricGenControl : LyricGenBase {
 		private Transform transform;
-		private Rect area;
-		private float sizeMin = 1.2f;
-		private float sizeMax = 1.3f;
-		private float rotateAngle = 0.0f;
-		private TMP_FontAsset font;
+		public Rect area;
+		public float sizeMin = 1.2f;
+		public float sizeMax = 1.3f;
+		public float rotateAngle = 0.0f;
+		public TMP_FontAsset font;
 		private Vector2 sizeDelta = new Vector2(5, 5);
 		private int waitClear = 0;
 		public int measureCount = 2;
@@ -98,10 +98,16 @@ public class SimpleLyricGen : MonoBehaviour {
 	LyricGenControl control;
 	void Start() {
 		control = new LyricGenControl(area, font, sizeMin, sizeMax, rotateAngle, this.transform);
+	}
+	void Update() {
 		control.active = active;
+		control.area = area;
+		control.sizeMin = sizeMin;
+		control.sizeMax = sizeMax;
+		control.rotateAngle = rotateAngle;
+		control.font = font;
 	}
 	public void SetActive(bool f) {
-		this.active = f;
-		control.active = f;
+		active = f;
 	}
 }

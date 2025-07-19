@@ -86,6 +86,7 @@ public class Player : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			if (Input.GetKey(KeyCode.LeftShift)) {
 				measure = 0;
+				LyricGenList.Clear();
 			}
 			OnPlayClicked();
 		}
@@ -114,7 +115,6 @@ public class Player : MonoBehaviour {
 		this.currentMsec = smfPlayer.currentMsec;
 		this.measure = smfPlayer.currentMeasure;
 		smfPlayer.Stop();
-		LyricGenList.Clear();
 	}
 	private void PlayStart() {
 		LyricData data = SentenceList.Instance.GetSentence(0, measure);

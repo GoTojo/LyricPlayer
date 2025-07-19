@@ -5,7 +5,7 @@ using TMPro;
 using System.Collections.Generic;
 
 class LyricGenLineBase : LyricGenBase {
-	private Rect area;
+	public Rect area;
 	protected float textHeight = 2f;
 	protected float textWidth = 2f;
 	protected List<GameObject> lyrics = new List<GameObject>();

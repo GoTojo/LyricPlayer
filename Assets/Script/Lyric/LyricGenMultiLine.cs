@@ -24,6 +24,8 @@ public class LyricGenMultiLine : MonoBehaviour {
 		private int waitClear = 0;
 		public LyricGenMultiLineControl(Rect area, float textHeight, float textWidth, TMP_FontAsset font, Transform transform) : base(area, textHeight, textWidth, font, transform) {
 		}
+		protected override void OnCleared() {
+		}
 		protected override void OnMeasureIn(int measure, int measureInterval, uint currentMsec) {
 			if (waitClear > 0) {
 				waitClear--;
@@ -45,6 +47,14 @@ public class LyricGenMultiLine : MonoBehaviour {
 
 	void Start() {
 		control = new LyricGenMultiLineControl(area, textHeight, textWidth, font, this.transform);
+		control.maxLine = maxLine;
+		control.scale = scale;
+		control.vertical = vertical;
+		control.active = active;
+	}
+
+	void Update() {
+		control.area = area;
 		control.maxLine = maxLine;
 		control.scale = scale;
 		control.vertical = vertical;

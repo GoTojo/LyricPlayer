@@ -6,10 +6,10 @@ using UnityEngine;
 using TMPro;
 
 public class LyricGenUnder1Line : MonoBehaviour {
-	public Rect area = new Rect(-10, -3, 20, 6);
+	public Vector3 position = new Vector3(0, -6.5f, 0);
 	public bool active = true;
 	class LyricGenControl : LyricGenBase {
-		private TextMeshPro text;
+		public TextMeshPro text;
 		private int waitCount = 3;
 		private int waitClear = 0;
 		public LyricGenControl(Vector3 position, Transform transform) {
@@ -46,8 +46,9 @@ public class LyricGenUnder1Line : MonoBehaviour {
 	LyricGenControl control;
 
 	void Start() {
-		control = new LyricGenControl(new Vector3(0, -6.5f, 0), this.transform);
+		control = new LyricGenControl(position, this.transform);
 	}
 	void Update() {
+		control.text.transform.position = position;
 	}
 }

@@ -14,8 +14,10 @@ public class LyricGenMultiLineByWord : MonoBehaviour {
 
 	public bool vertical = false;
 	public int maxLine = 5;
+	public bool autoclear = true;
 	public bool active = true;
 	class LyricGenMultiLineControl : LyricGenLineBase {
+		public bool autoclear = true;
 		private int numOfWord = 0;
 		private float measureInterval = 0;
 		public LyricGenMultiLineControl(Rect area, float textHeight, float textWidth, TMP_FontAsset font, Transform transform) : base(area, textHeight, textWidth, font, transform) {
@@ -32,7 +34,7 @@ public class LyricGenMultiLineByWord : MonoBehaviour {
 		}
 		protected override void OnLyricIn(int track, string lyric, float position, uint currentMsec) {
 			GameObject obj = CreateText(lyric);
-			if (obj) Destroy(obj, measureInterval * 2);
+			if (obj && autoclear) Destroy(obj, measureInterval * 2);
 			numOfWord += lyric.Length;
 		}
 		protected override void OnMeasureIn(int measure, int measureInterval, uint currentMsec) {
@@ -51,10 +53,15 @@ public class LyricGenMultiLineByWord : MonoBehaviour {
 
 	void Start() {
 		control = new LyricGenMultiLineControl(area, textHeight, textWidth, font, this.transform);
+	}
+
+	void Update() {
+		control.area = area;
 		control.maxLine = maxLine;
 		control.scale = scale;
 		control.vertical = vertical;
 		control.active = active;
+		control.autoclear = autoclear;
 	}
 
 	public void Clear() {
@@ -62,9 +69,6 @@ public class LyricGenMultiLineByWord : MonoBehaviour {
 	}
 
 	public void SetActive(bool f) {
-		control.Clear();
 		active = f;
-		control.active = f;
-		control.vertical = vertical;
 	}
 }
