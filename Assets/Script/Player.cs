@@ -12,6 +12,8 @@ public class Player : MonoBehaviour {
 	public int songnum = 0;
 	public int measure = 0;
 	private uint currentMsec = 0;
+	public GameObject editPanel;
+	public GameObject transportPanel;
 	public Button playButton;
 	public Button repeatButton;
 	public Slider curPos;
@@ -80,6 +82,18 @@ public class Player : MonoBehaviour {
 				curPos.value = measure;
 				textPos.text = curPos.value.ToString();
 			}
+		}
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			if (Input.GetKey(KeyCode.LeftShift)) {
+				measure = 0;
+			}
+			OnPlayClicked();
+		}
+		if (Input.GetKeyDown(KeyCode.T)) {
+			transportPanel.SetActive(!transportPanel.activeSelf);
+		}
+		if (Input.GetKeyDown(KeyCode.E)) {
+			editPanel.SetActive(!editPanel.activeSelf);
 		}
 	}
 	public void MIDIIn(int track, byte[] midiEvent, float position, uint currentMsec) {
