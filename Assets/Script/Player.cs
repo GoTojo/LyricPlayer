@@ -76,6 +76,7 @@ public class Player : MonoBehaviour {
 			measure = smfPlayer.currentMeasure;
 			if (fRepeat && measure >= pointB.value) {
 				PlayStop();
+				LyricGenList.Clear();
 				measure = (int)pointA.value;
 				PlayStart();
 			} else {
