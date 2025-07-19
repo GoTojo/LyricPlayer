@@ -13,11 +13,14 @@ public class ControlList {
 }
 
 [Serializable]
-public struct LyricData {
+public class LyricData {
 	public int measure;
 	public uint msec;
 	public string sentence;
 	public List<ControlList> beats;
+	public void SetSentence(string text) {
+		sentence = text;
+	}
 	public LyricData(int measure, uint msec, string sentence, int numofbeat) {
 		this.measure = measure;
 		this.msec = msec;
@@ -74,17 +77,28 @@ public class SentenceList
 			Save(path);
 		}
 	}
-	public LyricData GetSentence(int track, int measure)
-	{
-		LyricData emptyData = new LyricData(measure, 0, "", 1);
-		if (track < 1) track = 1; // track0 is BeatTrack
-		if (track > tracks.Count) return emptyData;
+	public bool IsValid(int track, int measure) {
+		if (track > tracks.Count) return false;
 		Track trackData = tracks[track - 1];
-		if (measure > trackData.lyrics.Count) return emptyData;
-		return trackData.lyrics[measure];
+		if (measure > trackData.lyrics.Count) return false;
+		return true;
 	}
-	private void GenerateTracks()
-	{
+	public LyricData GetSentence(int track, int measure) {
+		if (track < 1) track = 1; // track0 is BeatTrack
+		if (!IsValid(track, measure)) {
+			LyricData emptyData = new LyricData(measure, 0, "", 1);
+			return emptyData;
+		} else {
+			return tracks[track - 1].lyrics[measure];
+		}
+	}
+	public void SetSentence(int track, int measure, string sentence) {
+		if (track < 1) track = 1; // track0 is BeatTrack
+		if (IsValid(track, measure)) {
+			tracks[track - 1].lyrics[measure].sentence = sentence;
+		}
+	}
+	private void GenerateTracks() {
 		int numOfMeasure = eventMap.numOfMeasure;
 		int numOfTrack = eventMap.numOfTrack;
 
@@ -93,8 +107,7 @@ public class SentenceList
 		for (var track = 1; track < numOfTrack; track++) // track0 is BeatTrack
 		{
 			var trackData = new Track(track);
-			for (var meas = 0; meas < numOfMeasure; meas++)
-			{
+			for (var meas = 0; meas < numOfMeasure; meas++) {
 				uint msec = eventMap.GetMsec(meas);
 				string sentence = eventMap.GetSentence(meas, track);
 				SMFPlayer.Beat beat = eventMap.GetBeat(meas);
