@@ -80,6 +80,8 @@ public class EditPanel : MonoBehaviour {
 					Vector3 buttonPosition = new Vector3(buttonX, 10, 0);
 					buttonObj.transform.localPosition = buttonPosition;
 					Button button = buttonObj.GetComponent<Button>();
+					TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
+					text.text = list.controls[i];
 					button.onClick.AddListener(() => OnButtonClick(beatID, buttonID));
 					buttonX += 200;
 				}
