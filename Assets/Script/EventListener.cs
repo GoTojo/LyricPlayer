@@ -15,28 +15,39 @@ public class EventListener : MonoBehaviour {
 	void Start() {
 
 	}
-
 	void Update() {
-
 	}
-	private void ApplyControl(string command) {
-		string[] args = command.Split("_");
-		switch (args[0]) {
-		case "Title":
-			lyricControl.ApplyControl(args);
-			break;
-		default:
-			break;
+	private ControlList GetControlList(int beat) {
+		LyricData data = SentenceList.Instance.GetSentence(trackInput.value, currentMeasure);
+		return (data.beats.Count < beat) ? new ControlList() : data.beats[beat];
+	}
+	private void ApplyControl(int beat) {
+		ControlList controlList = GetControlList(beat);
+		foreach (string control in controlList.controls) {
+			string[] args = control.Split("_");
+			switch (args[0]) {
+			case "Title":
+			case "Line":
+			case "Words":
+			case "MultiL":
+			case "MultiR":
+			case "MultiVL":
+			case "MultiVR":
+			case "MultiWordL":
+			case "MultiWordR":
+			case "MultiWordVL":
+			case "MultiWordVR":
+				lyricControl.ApplyControl(args);
+				break;
+			default:
+				break;
+			}
 		}
 	}
 	public void MeasureIn(int measure, int measureInterval, uint currentMsec) {
 		currentMeasure = measure;
 	}
 	public void BeatIn(int numerator, int denominator, uint currentMsec) {
-		LyricData data = SentenceList.Instance.GetSentence(trackInput.value, currentMeasure);
-		if (data.beats.Count < numerator) return;
-		foreach (string control in data.beats[numerator].controls) {
-			ApplyControl(control);
-		}
+		ApplyControl(numerator);
 	}
 }

@@ -82,10 +82,10 @@ public class LyricControl : MonoBehaviour {
 		if (args.Length < 2) return;
 		switch (args[1]) {
 		case "On":
-			lyric.active = true;
+			lyric.SetActive(true);
 			break;
 		case "Off":
-			lyric.active = false;
+			lyric.SetActive(false);
 			break;
 		default:
 			break;

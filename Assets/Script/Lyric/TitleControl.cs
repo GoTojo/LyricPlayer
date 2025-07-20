@@ -9,7 +9,7 @@ public class TitleControl : LyricBase
 	void Start() {
 		title.text = SongInfo.GetTitle();
 	}
-	void Update() {
+	public override void OnParamChanged() {
 		title.enabled = active;
 	}
 }

@@ -52,7 +52,7 @@ public class LyricGenMultiLine : LyricBase {
 		control.active = active;
 	}
 
-	void Update() {
+	public override void OnParamChanged() {
 		control.area = area;
 		control.maxLine = maxLine;
 		control.scale = scale;

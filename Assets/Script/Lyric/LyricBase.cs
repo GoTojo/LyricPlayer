@@ -7,5 +7,12 @@ using UnityEngine;
 
 public class LyricBase : MonoBehaviour
 {
-	public bool active = true;
+	protected bool active = false;
+	public void SetActive(bool f) {
+		if (active == f) return;
+		active = f;
+		OnParamChanged();
+	}
+	public virtual void OnParamChanged() {
+	}
 }

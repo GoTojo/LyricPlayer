@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   area:
     serializedVersion: 2
     x: -6
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   area:
     serializedVersion: 2
     x: 13
@@ -3785,8 +3785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1089578a06b441eab198e17168ec68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  words: {fileID: 0}
-  line: {fileID: 0}
+  words: {fileID: 1830464503}
+  line: {fileID: 1306463515}
   multiL: {fileID: 1141084690}
   multiR: {fileID: 1652247153}
   multiVL: {fileID: 234201631}
@@ -3840,7 +3840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   area:
     serializedVersion: 2
     x: -6
@@ -3898,7 +3898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   area:
     serializedVersion: 2
     x: -6
@@ -4392,7 +4392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e8559044c764faaa777dde56d18520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   position: {x: 0, y: -6.5, z: 0}
 --- !u!1 &1340273269
 GameObject:
@@ -4539,7 +4539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   area:
     serializedVersion: 2
     x: 13
@@ -5021,7 +5021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   area:
     serializedVersion: 2
     x: -6
@@ -5169,7 +5169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   area:
     serializedVersion: 2
     x: -6
@@ -5364,7 +5364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   area:
     serializedVersion: 2
     x: 13
@@ -6462,7 +6462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5b28a2d1dbc4230a01f142d1b20724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   area:
     serializedVersion: 2
     x: -10

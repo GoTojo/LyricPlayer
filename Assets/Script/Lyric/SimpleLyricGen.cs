@@ -28,7 +28,6 @@ public class SimpleLyricGen : LyricBase {
 
 		private List<GameObject> lyrics = new List<GameObject>();
 
-
 		public LyricGenControl(Rect area, TMP_FontAsset font, float sizeMin, float sizeMax, float rotateAngle, Transform transform) {
 			this.area = area;
 			this.font = font;
@@ -98,7 +97,7 @@ public class SimpleLyricGen : LyricBase {
 	void Start() {
 		control = new LyricGenControl(area, font, sizeMin, sizeMax, rotateAngle, this.transform);
 	}
-	void Update() {
+	public override void OnParamChanged() {
 		control.active = active;
 		control.area = area;
 		control.sizeMin = sizeMin;

@@ -54,7 +54,7 @@ public class LyricGenMultiLineByWord : LyricBase {
 		control = new LyricGenMultiLineControl(area, textHeight, textWidth, font, this.transform);
 	}
 
-	void Update() {
+	public override void OnParamChanged() {
 		control.area = area;
 		control.maxLine = maxLine;
 		control.scale = scale;
