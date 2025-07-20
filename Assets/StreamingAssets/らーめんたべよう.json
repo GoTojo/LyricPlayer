@@ -10,7 +10,7 @@
                     "sentence": "らーめん食べよう",
                     "beats": [
                         {
-                            "controls": ["Title_On"]
+                            "controls": ["Line_On", "Words_On"]
                         },
                         {
                             "controls": []
@@ -48,7 +48,7 @@
                     "sentence": "",
                     "beats": [
                         {
-                            "controls": ["Title_Off"]
+                            "controls": ["Words_Off"]
                         },
                         {
                             "controls": []
@@ -200,7 +200,7 @@
                     "sentence": "朝",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiL_On"]
                         },
                         {
                             "controls": []
@@ -238,7 +238,7 @@
                     "sentence": "とても",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiL_Off", "MultiR_On"]
                         },
                         {
                             "controls": []
@@ -276,7 +276,7 @@
                     "sentence": "おなか",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiR_Off", "MultiVL_On"]
                         },
                         {
                             "controls": []
@@ -295,7 +295,7 @@
                     "sentence": "すいたな",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiVL_Off", "MultiVR_On"]
                         },
                         {
                             "controls": []
@@ -314,7 +314,7 @@
                     "sentence": "らーめん食べよう",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiVR_Off", "Words_On"]
                         },
                         {
                             "controls": []
@@ -352,7 +352,7 @@
                     "sentence": "",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["Words_Off"]
                         },
                         {
                             "controls": []
@@ -504,7 +504,7 @@
                     "sentence": "夜",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiWordL_On"]
                         },
                         {
                             "controls": []
@@ -542,7 +542,7 @@
                     "sentence": "おなか",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiWordL_Off", "MultiWordR_On"]
                         },
                         {
                             "controls": []
@@ -577,16 +577,16 @@
                 {
                     "measure": 30,
                     "msec": 48600,
-                    "sentence": "体重気に",
+                    "sentence": "体重",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiWordR_Off", "MultiWordVL_On"]
                         },
                         {
                             "controls": []
                         },
                         {
-                            "controls": []
+                            "controls": ["MultiWordVL_Stop", "MultiWordVR_On"]
                         },
                         {
                             "controls": []
@@ -596,10 +596,10 @@
                 {
                     "measure": 31,
                     "msec": 50220,
-                    "sentence": "なるけど",
+                    "sentence": "気になるけど",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiWordVL_Off"]
                         },
                         {
                             "controls": []
@@ -618,7 +618,7 @@
                     "sentence": "らーめん食べよう",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["MultiWordVR_Off", "Words_On"]
                         },
                         {
                             "controls": []
@@ -656,7 +656,7 @@
                     "sentence": "",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["Words_Off"]
                         },
                         {
                             "controls": []

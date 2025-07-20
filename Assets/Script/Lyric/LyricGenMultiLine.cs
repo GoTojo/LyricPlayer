@@ -46,10 +46,6 @@ public class LyricGenMultiLine : LyricBase {
 
 	void Start() {
 		control = new LyricGenMultiLineControl(area, textHeight, textWidth, font, this.transform);
-		control.maxLine = maxLine;
-		control.scale = scale;
-		control.vertical = vertical;
-		control.active = active;
 	}
 
 	public override void OnParamChanged() {
@@ -57,13 +53,10 @@ public class LyricGenMultiLine : LyricBase {
 		control.maxLine = maxLine;
 		control.scale = scale;
 		control.vertical = vertical;
-		if (control.active != active) {
-			control.Clear();
-			control.active = active;
-		}
+		control.active = active;
 	}
 
-	public void Clear() {
+	public override void Clear() {
 		control.Clear();
 	}
 }

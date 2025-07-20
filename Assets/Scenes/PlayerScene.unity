@@ -714,7 +714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   area:
     serializedVersion: 2
     x: -6
@@ -771,7 +770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   area:
     serializedVersion: 2
     x: 13
@@ -2258,7 +2256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b735d93a86b554d648bad2c7dd7945c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   title: {fileID: 567672422}
 --- !u!1 &568154785
 GameObject:
@@ -3840,7 +3837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   area:
     serializedVersion: 2
     x: -6
@@ -3898,7 +3894,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   area:
     serializedVersion: 2
     x: -6
@@ -4392,7 +4387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e8559044c764faaa777dde56d18520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   position: {x: 0, y: -6.5, z: 0}
 --- !u!1 &1340273269
 GameObject:
@@ -4539,7 +4533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   area:
     serializedVersion: 2
     x: 13
@@ -5021,11 +5014,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   area:
     serializedVersion: 2
-    x: -6
-    y: 13
+    x: 13
+    y: 0
     width: 20
     height: 6
   font: {fileID: 11400000, guid: 148eedae8e7804037b447a06e78942e0, type: 2}
@@ -5169,7 +5161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   area:
     serializedVersion: 2
     x: -6
@@ -5364,7 +5355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   area:
     serializedVersion: 2
     x: 13
@@ -6462,7 +6452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5b28a2d1dbc4230a01f142d1b20724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   area:
     serializedVersion: 2
     x: -10

@@ -60,12 +60,9 @@ public class LyricGenMultiLineByWord : LyricBase {
 		control.scale = scale;
 		control.vertical = vertical;
 		control.autoclear = autoclear;
-		if (control.active != active) {
-			control.Clear();
-			control.active = active;
-		}
+		control.active = active;
 	}
-	public void Clear() {
+	public override void Clear() {
 		control.Clear();
 	}
 }

@@ -47,7 +47,7 @@ public class LyricGenUnder1Line : LyricBase {
 	void Start() {
 		control = new LyricGenControl(position, this.transform);
 	}
-	void Update() {
+	public override void OnParamChanged() {
 		control.text.transform.position = position;
 	}
 }

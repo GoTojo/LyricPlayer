@@ -84,8 +84,15 @@ public class LyricControl : MonoBehaviour {
 		case "On":
 			lyric.SetActive(true);
 			break;
+		case "Stop":
+			lyric.SetActive(false);
+			break;
 		case "Off":
 			lyric.SetActive(false);
+			lyric.Clear();
+			break;
+		case "Clear":
+			lyric.Clear();
 			break;
 		default:
 			break;
