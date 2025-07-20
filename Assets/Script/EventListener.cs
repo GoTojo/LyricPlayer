@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class EventListener : MonoBehaviour {
+	public LyricControl lyricControl;
 	public TMP_Dropdown trackInput;
 	private int currentMeasure = 0;
 	void Awake() {
@@ -21,6 +22,9 @@ public class EventListener : MonoBehaviour {
 	private void ApplyControl(string command) {
 		string[] args = command.Split("_");
 		switch (args[0]) {
+		case "Title":
+			lyricControl.ApplyControl(args);
+			break;
 		default:
 			break;
 		}

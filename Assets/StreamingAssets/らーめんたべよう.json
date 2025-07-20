@@ -10,7 +10,7 @@
                     "sentence": "らーめん食べよう",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["Title_On"]
                         },
                         {
                             "controls": []
@@ -48,7 +48,7 @@
                     "sentence": "",
                     "beats": [
                         {
-                            "controls": []
+                            "controls": ["Title_Off"]
                         },
                         {
                             "controls": []

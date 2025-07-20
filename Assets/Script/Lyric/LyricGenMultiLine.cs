@@ -9,7 +9,7 @@ using Unity.IO.LowLevel.Unsafe;
 using System;
 using UnityEngine.AI;
 
-public class LyricGenMultiLine : MonoBehaviour {
+public class LyricGenMultiLine : LyricBase {
 	public Rect area = new Rect(-6, -4, 20, 6);
 	public TMP_FontAsset font;
 	public float scale = 0.7f;
@@ -18,7 +18,6 @@ public class LyricGenMultiLine : MonoBehaviour {
 
 	public bool vertical = false;
 	public int maxLine = 5;
-	public bool active = true;
 	class LyricGenMultiLineControl : LyricGenLineBase {
 		private int waitCount = 3;
 		private int waitClear = 0;

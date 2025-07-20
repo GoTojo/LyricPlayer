@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
 	private bool fRepeat = false;
 	private Image playButtonImage;
 	private Image repeatButtonImage;
+	private float endTimer = 0;
 
 	// Start is called before the first frame update
 	void Awake() {
@@ -73,6 +74,12 @@ public class Player : MonoBehaviour {
 	void Update() {
 		smfPlayer.Update();
 		if (smfPlayer.isPlaying()) {
+			if (!audioSource.isPlaying) {
+				endTimer -= Time.deltaTime;
+				if (endTimer <= 0) {
+					PlayStop();
+				}
+			}
 			measure = smfPlayer.currentMeasure;
 			if (fRepeat && measure >= pointB.value) {
 				PlayStop();
@@ -131,6 +138,7 @@ public class Player : MonoBehaviour {
 		if (audioSource.isPlaying) {
 			PlayStop();
 		} else {
+			endTimer = 1f;
 			PlayStart();
 		}
 		UpdatePlayButtonImage();

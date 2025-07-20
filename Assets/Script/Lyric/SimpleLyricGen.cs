@@ -5,13 +5,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UIElements;
 
-public class SimpleLyricGen : MonoBehaviour {
+public class SimpleLyricGen : LyricBase {
 	public Rect area = new Rect(-10, 0, 20, 2);
 	public float sizeMin = 1.2f;
 	public float sizeMax = 1.3f;
 	public float rotateAngle = 0.0f;
 	public TMP_FontAsset font;
-	public bool active = false;
 	class LyricGenControl : LyricGenBase {
 		private Transform transform;
 		public Rect area;

@@ -5,9 +5,8 @@
 using UnityEngine;
 using TMPro;
 
-public class LyricGenUnder1Line : MonoBehaviour {
+public class LyricGenUnder1Line : LyricBase {
 	public Vector3 position = new Vector3(0, -6.5f, 0);
-	public bool active = true;
 	class LyricGenControl : LyricGenBase {
 		public TextMeshPro text;
 		private int waitCount = 3;

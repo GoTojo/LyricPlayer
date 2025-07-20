@@ -1,0 +1,94 @@
+/// LyricControl.cs
+/// Lyricのエディットやイベントの反映などを行う
+/// Copyright (c) 2025 gotojo
+using System;
+using UnityEngine;
+using TMPro;
+public class LyricControl : MonoBehaviour {
+	public SimpleLyricGen words;
+	public LyricGenUnder1Line line;
+	public LyricGenMultiLine multiL;
+	public LyricGenMultiLine multiR;
+	public LyricGenMultiLine multiVL;
+	public LyricGenMultiLine multiVR;
+	public LyricGenMultiLineByWord multiWordL;
+	public LyricGenMultiLineByWord multiWordR;
+	public LyricGenMultiLineByWord multiWordVL;
+	public LyricGenMultiLineByWord multiWordVR;
+	public TitleControl title;
+
+	public enum Type {
+		Title,
+		Line,
+		Words,
+		MultiL,
+		MultiR,
+		MultiVL,
+		MultiVR,
+		MultiWordL,
+		MultiWordR,
+		MultiWordVL,
+		MultiWordVR,
+	};
+	public void SetPosition(Vector3 position) {
+		
+	}
+	public LyricBase GetLyricObj(Type type) {
+		LyricBase lyric = null;
+		switch (type) {
+		case Type.Title:
+			lyric = title;
+			break;
+		case Type.Line:
+			lyric = line;
+			break;
+		case Type.Words:
+			lyric = words;
+			break;
+		case Type.MultiL:
+			lyric = multiL;
+			break;
+		case Type.MultiR:
+			lyric = multiR;
+			break;
+		case Type.MultiVL:
+			lyric = multiVL;
+			break;
+		case Type.MultiVR:
+			lyric = multiVR;
+			break;
+		case Type.MultiWordL:
+			lyric = multiWordL;
+			break;
+		case Type.MultiWordR:
+			lyric = multiWordR;
+			break;
+		case Type.MultiWordVL:
+			lyric = multiWordVL;
+			break;
+		case Type.MultiWordVR:
+			lyric = multiWordVR;
+			break;
+		default:
+			break;
+		}
+		return lyric;
+	}
+	public void ApplyControl(string[] args) {
+		if (args.Length == 0) return;
+		Type type = (Type)Enum.Parse(typeof(Type), args[0]);
+		LyricBase lyric = GetLyricObj(type);
+		if (!lyric) return;
+		if (args.Length < 2) return;
+		switch (args[1]) {
+		case "On":
+			lyric.active = true;
+			break;
+		case "Off":
+			lyric.active = false;
+			break;
+		default:
+			break;
+		}
+	}
+};

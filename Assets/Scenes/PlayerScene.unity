@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a7016b057644a259431881fa1d1f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lyricControl: {fileID: 1035308292}
   trackInput: {fileID: 2090691774}
 --- !u!1 &163544578
 GameObject:
@@ -713,6 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   area:
     serializedVersion: 2
     x: -6
@@ -725,7 +727,6 @@ MonoBehaviour:
   textWidth: 1
   vertical: 1
   maxLine: 5
-  active: 1
 --- !u!1 &285416139
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   area:
     serializedVersion: 2
     x: 13
@@ -782,7 +784,6 @@ MonoBehaviour:
   textWidth: 1
   vertical: 1
   maxLine: 5
-  active: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,13 +2084,14 @@ GameObject:
   - component: {fileID: 567672421}
   - component: {fileID: 567672423}
   - component: {fileID: 567672422}
+  - component: {fileID: 567672424}
   m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &567672421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2116,7 +2118,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567672420}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
@@ -2157,8 +2159,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2244,6 +2246,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &567672424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567672420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b735d93a86b554d648bad2c7dd7945c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  title: {fileID: 567672422}
 --- !u!1 &568154785
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,6 +3739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1035308291}
+  - component: {fileID: 1035308292}
   m_Layer: 0
   m_Name: Lyrics
   m_TagString: Untagged
@@ -3756,6 +3773,29 @@ Transform:
   - {fileID: 567672421}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1035308292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035308290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1089578a06b441eab198e17168ec68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  words: {fileID: 0}
+  line: {fileID: 0}
+  multiL: {fileID: 1141084690}
+  multiR: {fileID: 1652247153}
+  multiVL: {fileID: 234201631}
+  multiVR: {fileID: 285416141}
+  multiWordL: {fileID: 1552894508}
+  multiWordR: {fileID: 1378334934}
+  multiWordVL: {fileID: 1131143208}
+  multiWordVR: {fileID: 1536350844}
+  title: {fileID: 567672424}
 --- !u!1 &1131143206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3800,6 +3840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   area:
     serializedVersion: 2
     x: -6
@@ -3813,7 +3854,6 @@ MonoBehaviour:
   vertical: 1
   maxLine: 5
   autoclear: 1
-  active: 1
 --- !u!1 &1141084688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3858,6 +3898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   area:
     serializedVersion: 2
     x: -6
@@ -3870,7 +3911,6 @@ MonoBehaviour:
   textWidth: 1
   vertical: 0
   maxLine: 5
-  active: 1
 --- !u!1 &1152413007
 GameObject:
   m_ObjectHideFlags: 0
@@ -4352,8 +4392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e8559044c764faaa777dde56d18520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: -6.5, z: 0}
   active: 1
+  position: {x: 0, y: -6.5, z: 0}
 --- !u!1 &1340273269
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,6 +4539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   area:
     serializedVersion: 2
     x: 13
@@ -4512,7 +4553,6 @@ MonoBehaviour:
   vertical: 0
   maxLine: 5
   autoclear: 1
-  active: 1
 --- !u!1 &1446485398
 GameObject:
   m_ObjectHideFlags: 0
@@ -4981,6 +5021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   area:
     serializedVersion: 2
     x: -6
@@ -4994,7 +5035,6 @@ MonoBehaviour:
   vertical: 1
   maxLine: 5
   autoclear: 1
-  active: 1
 --- !u!1 &1545182737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,6 +5169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4145264c225dd4c4ba05498152cef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   area:
     serializedVersion: 2
     x: -6
@@ -5142,7 +5183,6 @@ MonoBehaviour:
   vertical: 0
   maxLine: 5
   autoclear: 1
-  active: 1
 --- !u!1 &1593358458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5324,6 +5364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6778f31cc9c4d6f86deb46354ca24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   area:
     serializedVersion: 2
     x: 13
@@ -5336,7 +5377,6 @@ MonoBehaviour:
   textWidth: 1
   vertical: 0
   maxLine: 5
-  active: 1
 --- !u!1 &1678117095
 GameObject:
   m_ObjectHideFlags: 0
@@ -6422,6 +6462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5b28a2d1dbc4230a01f142d1b20724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   area:
     serializedVersion: 2
     x: -10
@@ -6432,7 +6473,6 @@ MonoBehaviour:
   sizeMax: 1.3
   rotateAngle: 0
   font: {fileID: 11400000, guid: 148eedae8e7804037b447a06e78942e0, type: 2}
-  active: 1
 --- !u!1 &1866957517
 GameObject:
   m_ObjectHideFlags: 0

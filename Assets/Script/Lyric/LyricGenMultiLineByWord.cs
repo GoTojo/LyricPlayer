@@ -5,7 +5,7 @@
 using UnityEngine;
 using TMPro;
 
-public class LyricGenMultiLineByWord : MonoBehaviour {
+public class LyricGenMultiLineByWord : LyricBase {
 	public Rect area = new Rect(-6, -4, 20, 6);
 	public TMP_FontAsset font;
 	public float scale = 0.7f;
@@ -15,7 +15,6 @@ public class LyricGenMultiLineByWord : MonoBehaviour {
 	public bool vertical = false;
 	public int maxLine = 5;
 	public bool autoclear = true;
-	public bool active = true;
 	class LyricGenMultiLineControl : LyricGenLineBase {
 		public bool autoclear = true;
 		private int numOfWord = 0;
