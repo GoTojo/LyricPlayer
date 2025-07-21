@@ -18,6 +18,14 @@ public class Parameter {
 		MultiWordVL,
 		MultiWordVR
 	};
+	public enum Font {
+		JKMaruGothic,
+		DelaGothicOne,
+		HachiMaruPop,
+		KaiseiTokumin,
+		LightNovelPOP,
+		RocknRollOne
+	};
 	public static string [] GetOptions(string command, int num) {
 		switch (command) {
 		case "Title":

@@ -11,19 +11,18 @@ public class LyricGenUnder1Line : LyricBase {
 		public TextMeshPro text;
 		private int waitCount = 3;
 		private int waitClear = 0;
-		public LyricGenControl(Vector3 position, Transform transform) {
-			TMP_FontAsset font = FontResource.Instance.GetFont();
+		public LyricGenControl(Vector3 position, TMP_FontAsset font, Transform transform) {
+			this.font = font;
 			Color color = new Color(0.0f, 0.0f, 0.0f, 1.0f);
 			float scale = 1f;
 			float rotate = 0;
 			Vector2 size = new Vector2(20, 2);
 			this.active = true;
-			GameObject simpleLyric = CreateText("", font, color, TextAlignmentOptions.Center, size, position, scale, rotate);
+			GameObject simpleLyric = CreateText("", color, TextAlignmentOptions.Center, size, position, scale, rotate);
 			this.text = simpleLyric.GetComponent<TextMeshPro>();
 			simpleLyric.transform.SetParent(transform);
 		}
 		protected override void OnTextChanged(string sentence) {
-			text.font = FontResource.Instance.GetFont();
 			text.text = sentence;
 			waitClear = waitCount;
 		}
@@ -45,7 +44,7 @@ public class LyricGenUnder1Line : LyricBase {
 	LyricGenControl control;
 
 	void Start() {
-		control = new LyricGenControl(position, this.transform);
+		control = new LyricGenControl(position, font, this.transform);
 	}
 	public override void OnParamChanged() {
 		control.text.transform.position = position;

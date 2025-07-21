@@ -9,7 +9,6 @@ class LyricGenLineBase : LyricGenBase {
 	protected float textHeight = 2f;
 	protected float textWidth = 2f;
 	protected List<GameObject> lyrics = new List<GameObject>();
-	protected TMP_FontAsset font;
 	protected Transform transform;
 	protected int line = 0;
 	public int maxLine = 5;
@@ -73,7 +72,7 @@ class LyricGenLineBase : LyricGenBase {
 		} else {
 			alignment = TextAlignmentOptions.TopLeft;
 		}
-		GameObject lyric = CreateText(text, font, color, alignment, size, position, scale, rotate);
+		GameObject lyric = CreateText(text, color, alignment, size, position, scale, rotate);
 		lyric.transform.SetParent(transform);
 		lyrics.Add(lyric);
 		return lyric;

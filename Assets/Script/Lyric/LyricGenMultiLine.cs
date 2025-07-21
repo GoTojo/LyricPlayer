@@ -11,7 +11,6 @@ using UnityEngine.AI;
 
 public class LyricGenMultiLine : LyricBase {
 	public Rect area = new Rect(-6, -4, 20, 6);
-	public TMP_FontAsset font;
 	public float scale = 0.7f;
 	public float textHeight = 1.0f;
 	public float textWidth = 1f;

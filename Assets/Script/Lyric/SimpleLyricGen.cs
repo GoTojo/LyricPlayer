@@ -10,14 +10,12 @@ public class SimpleLyricGen : LyricBase {
 	public float sizeMin = 1.2f;
 	public float sizeMax = 1.3f;
 	public float rotateAngle = 0.0f;
-	public TMP_FontAsset font;
 	class LyricGenControl : LyricGenBase {
 		private Transform transform;
 		public Rect area;
 		public float sizeMin = 1.2f;
 		public float sizeMax = 1.3f;
 		public float rotateAngle = 0.0f;
-		public TMP_FontAsset font;
 		private Vector2 sizeDelta = new Vector2(5, 5);
 		private int waitClear = 0;
 		public int measureCount = 2;
@@ -28,9 +26,8 @@ public class SimpleLyricGen : LyricBase {
 
 		private List<GameObject> lyrics = new List<GameObject>();
 
-		public LyricGenControl(Rect area, TMP_FontAsset font, float sizeMin, float sizeMax, float rotateAngle, Transform transform) {
+		public LyricGenControl(Rect area, float sizeMin, float sizeMax, float rotateAngle, Transform transform) {
 			this.area = area;
-			this.font = font;
 			this.sizeMin = sizeMin;
 			this.sizeMax = sizeMax;
 			this.rotateAngle = rotateAngle;
@@ -47,7 +44,7 @@ public class SimpleLyricGen : LyricBase {
 			Vector3 pos = new Vector3(x, y, -1);
 			float scale = UnityEngine.Random.Range(sizeMin, sizeMax);
 			float rotate = UnityEngine.Random.Range(-rotateAngle, rotateAngle);
-			GameObject lyric = CreateText(curWord, font, color, TextAlignmentOptions.Top, sizeDelta, pos, scale, rotate);
+			GameObject lyric = CreateText(curWord, color, TextAlignmentOptions.Top, sizeDelta, pos, scale, rotate);
 			lyric.transform.SetParent(transform);
 			lyrics.Add(lyric);
 			lyricNum++;
@@ -95,7 +92,7 @@ public class SimpleLyricGen : LyricBase {
 	};
 	LyricGenControl control;
 	void Start() {
-		control = new LyricGenControl(area, font, sizeMin, sizeMax, rotateAngle, this.transform);
+		control = new LyricGenControl(area, sizeMin, sizeMax, rotateAngle, this.transform);
 	}
 	public override void OnParamChanged() {
 		control.active = active;

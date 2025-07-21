@@ -11,6 +11,7 @@ public class LyricGenBase {
 	public int curMeas = 0;
 	public int lastSentenceMeas = -1;
 	public int measInterval = 2000;
+	public TMP_FontAsset font;
 	private string sentence = "";
 	protected bool autoSizeTextContainer = false;
 	protected float fontSize = 12;
@@ -47,7 +48,7 @@ public class LyricGenBase {
 		midiWatcher.onMeasureIn -= MeasureIn;
 		midiWatcher.onEventIn -= EventIn;
 	}
-	public GameObject CreateText(string word, TMP_FontAsset font, Color color, TextAlignmentOptions align, Vector2 sizeDelta, Vector3 position, float scale, float rotate) {
+	public GameObject CreateText(string word, Color color, TextAlignmentOptions align, Vector2 sizeDelta, Vector3 position, float scale, float rotate) {
 		if (!active) return null;
 		GameObject simpleLyric = new GameObject("SimpleLyric");
 		simpleLyric.AddComponent<TextMeshPro>();
