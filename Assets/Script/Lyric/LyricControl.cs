@@ -30,6 +30,12 @@ public class LyricControl : MonoBehaviour {
 		MultiWordVL,
 		MultiWordVR,
 	};
+	public enum Command {
+		On,
+		Off,
+		Stop,
+		Clear
+	};
 	public void SetPosition(Vector3 position) {
 		
 	}
@@ -97,5 +103,12 @@ public class LyricControl : MonoBehaviour {
 		default:
 			break;
 		}
+	}
+	public static string [] GetOptions(string command, int num) {
+		string [] options = null;
+		if (num == 0) {
+			options = Enum.GetNames(typeof(Command));
+		}
+		return options;
 	}
 };

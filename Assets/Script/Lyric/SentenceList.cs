@@ -79,6 +79,7 @@ public class SentenceList
 	}
 	public bool IsValid(int track, int measure) {
 		if (track > tracks.Count) return false;
+		if (track < 1) return false;
 		Track trackData = tracks[track - 1];
 		if (measure > trackData.lyrics.Count) return false;
 		return true;
@@ -97,6 +98,24 @@ public class SentenceList
 		if (IsValid(track, measure)) {
 			tracks[track - 1].lyrics[measure].sentence = sentence;
 		}
+	}
+	public bool SetControl(int track, int measure, int beat, int num, string control) {
+		if (!IsValid(track, measure)) return false;
+		LyricData data = GetSentence(track, measure);
+		if (beat >= data.beats.Count) return false;
+		if (num < data.beats[beat].controls.Count) {
+			if (control.Length == 0) {
+				data.beats[beat].controls.RemoveAt(num);
+			} else {
+				data.beats[beat].controls[num] = control;
+			}
+		} else if (num == data.beats[beat].controls.Count) {
+			if (control.Length == 0) return false;
+			data.beats[beat].controls.Add(control);
+		} else {
+			return false;
+		}
+		return true;
 	}
 	private void GenerateTracks() {
 		int numOfMeasure = eventMap.numOfMeasure;

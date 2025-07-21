@@ -11,7 +11,7 @@ public class EditPanel : MonoBehaviour {
 	public TMP_InputField lyric;
 	public TMP_Text text;
 	public Player player;
-	public GameObject eventSettingPanel;
+	public EventSettingPanel eventSettingPanel;
 	private int measure = -1;
 	private GameObject textTrackNumber;
 	private GameObject eventButton;
@@ -40,16 +40,17 @@ public class EditPanel : MonoBehaviour {
 			measure = player.measure;
 			LyricData data = SentenceList.Instance.GetSentence(trackInput.value + 1, measure);
 			lyric.text = data.sentence;
-			CreateOption();
+			if (!eventSettingPanel.IsActive()) CreateOption();
 		}
 	}
-	public void OnEventSettingSubmit() {
-		eventSettingPanel.SetActive(false);
-	}
 	public void OnButtonClick(int beat, int num) {
-		eventSettingPanel.transform.SetAsLastSibling();
-		eventSettingPanel.SetActive(true);
-		Debug.Log($"{beat}, {num}");
+		eventSettingPanel.Show(trackInput.value, measure, beat, num);
+	}
+	public void OnEventSettingSubmit() {
+		CreateOption();
+	}
+	public void OnEventSettingCancel() {
+		CreateOption();
 	}
 	private void CreateOption() {
 		LyricData data = SentenceList.Instance.GetSentence(trackInput.value, measure);
@@ -67,24 +68,16 @@ public class EditPanel : MonoBehaviour {
 			tmpro.text = (beat + 1).ToString();
 			trackNum.transform.localPosition = position;
 			float buttonX = 30;
-			if (list.controls.Count == 0) {
+			for (var i = 0; i < list.controls.Count + 1; i++) {
+				int buttonID = i;
 				GameObject buttonObj = Instantiate(eventButton, trackNum.transform);
 				Vector3 buttonPosition = new Vector3(buttonX, 10, 0);
 				buttonObj.transform.localPosition = buttonPosition;
 				Button button = buttonObj.GetComponent<Button>();
-				button.onClick.AddListener(() => OnButtonClick(beatID, 0));
-			} else {
-				for (var i = 0; i < list.controls.Count; i++) {
-					int buttonID = i;
-					GameObject buttonObj = Instantiate(eventButton, trackNum.transform);
-					Vector3 buttonPosition = new Vector3(buttonX, 10, 0);
-					buttonObj.transform.localPosition = buttonPosition;
-					Button button = buttonObj.GetComponent<Button>();
-					TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
-					text.text = list.controls[i];
-					button.onClick.AddListener(() => OnButtonClick(beatID, buttonID));
-					buttonX += 200;
-				}
+				TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
+				if (i < list.controls.Count) text.text = list.controls[i];
+				button.onClick.AddListener(() => OnButtonClick(beatID, buttonID));
+				buttonX += 200;
 			}
 			textTrackNumbers.Add(trackNum);
 			y -= 50;
