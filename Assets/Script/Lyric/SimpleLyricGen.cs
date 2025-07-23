@@ -89,6 +89,15 @@ public class SimpleLyricGen : LyricBase {
 			Clear();
 			sentenceLength = sentence.Length;
 		}
+		public void SetText(string text) {
+			char [] words = text.ToCharArray();
+			Clear();
+			sentenceLength = words.Length;
+			foreach (char word in words) {
+				curWord = word.ToString();
+				CreateLyric();
+			}
+		}
 	};
 	LyricGenControl control;
 	void Start() {
@@ -101,5 +110,14 @@ public class SimpleLyricGen : LyricBase {
 		control.sizeMax = sizeMax;
 		control.rotateAngle = rotateAngle;
 		control.font = font;
+	}
+	public override void Clear() {
+		control.Clear();
+	}
+	public override void ShowSampleText(string [] text) {
+		control.SetText(text[0]);
+	}
+	public override void Hide() {
+		Clear();
 	}
 }

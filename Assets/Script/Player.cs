@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
 	private uint currentMsec = 0;
 	public GameObject editPanel;
 	public GameObject transportPanel;
+	public GameObject settingPanel;
 	public Button playButton;
 	public Button repeatButton;
 	public Slider curPos;
@@ -91,18 +92,23 @@ public class Player : MonoBehaviour {
 				textPos.text = curPos.value.ToString();
 			}
 		}
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			if (Input.GetKey(KeyCode.LeftShift)) {
-				measure = 0;
-				LyricGenList.Clear();
+		if (Input.GetKeyDown(KeyCode.L)) {
+			settingPanel.SetActive(!settingPanel.activeSelf);
+		}
+		if (!settingPanel.activeSelf) {
+			if (Input.GetKeyDown(KeyCode.Space)) {
+				if (Input.GetKey(KeyCode.LeftShift)) {
+					measure = 0;
+					LyricGenList.Clear();
+				}
+				OnPlayClicked();
 			}
-			OnPlayClicked();
-		}
-		if (Input.GetKeyDown(KeyCode.T)) {
-			transportPanel.SetActive(!transportPanel.activeSelf);
-		}
-		if (Input.GetKeyDown(KeyCode.E)) {
-			editPanel.SetActive(!editPanel.activeSelf);
+			if (Input.GetKeyDown(KeyCode.T)) {
+				transportPanel.SetActive(!transportPanel.activeSelf);
+			}
+			if (Input.GetKeyDown(KeyCode.E)) {
+				editPanel.SetActive(!editPanel.activeSelf);
+			}
 		}
 	}
 	public void MIDIIn(int track, byte[] midiEvent, float position, uint currentMsec) {

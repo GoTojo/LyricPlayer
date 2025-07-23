@@ -7,10 +7,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
-public class LyricBase : MonoBehaviour
+public abstract class LyricBase : MonoBehaviour
 {
 	public TMP_FontAsset font;
-	protected bool active = false;
+	public bool active = false;
 	void Awake() {
 		LyricList.lyrics.Add(this);
 	}
@@ -18,16 +18,9 @@ public class LyricBase : MonoBehaviour
 		active = f;
 		OnParamChanged();
 	}
-	public virtual void OnParamChanged() {
-	}
-	public virtual void Clear() {
-	}
 	public virtual void SetPosX(float x) {
-
-		// this.transform.position.x = x;
 	}
 	public virtual void SetPosY(float y) {
-		// this.transform.position.y = y;
 	}
 	public virtual float GetPosX() {
 		return this.transform.position.x;
@@ -35,13 +28,24 @@ public class LyricBase : MonoBehaviour
 	public virtual float GetPosY() {
 		return this.transform.position.y;
 	}
-	public void SetFont(Parameter.Font font) {
+	public void SetFont(TMP_FontAsset font) {
+		this.font = font;
+		OnParamChanged();
 	}
-	public Parameter.Font GetFont() {
-		return Parameter.Font.JKMaruGothic;
+	public TMP_FontAsset GetFont() {
+		return font;
 	}
-	public void SetSampleText(string [] text) {
+	public virtual void Show() {
+		active = true;
+		OnParamChanged();
 	}
+	public virtual void Hide() {
+		active = false;
+		OnParamChanged();
+	}
+	public abstract void ShowSampleText(string [] text);
+	public abstract void OnParamChanged();
+	public abstract void Clear();
 }
 
 public class LyricList {

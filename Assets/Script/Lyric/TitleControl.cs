@@ -6,10 +6,19 @@ using TMPro;
 public class TitleControl : LyricBase
 {
 	public TextMeshPro title;
+	string titleText;
 	void Start() {
-		title.text = SongInfo.GetTitle();
+		titleText = SongInfo.GetTitle();
 	}
 	public override void OnParamChanged() {
+		if (active) title.text = titleText;
+		title.font = font;
 		title.enabled = active;
+	}
+	public override void Clear() {
+		title.text = "";
+	}
+	public override void ShowSampleText(string [] sampletext) {
+		title.text = sampletext[0];
 	}
 }

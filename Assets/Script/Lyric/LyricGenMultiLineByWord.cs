@@ -46,6 +46,14 @@ public class LyricGenMultiLineByWord : LyricBase {
 				line++;
 			}
 		}
+		public void SetText (string [] text) {
+			Clear();
+			for (var i = 0; i < maxLine; i++) {
+				if (text.Length < i) break;
+				CreateText(text[i]);
+				line++;
+			}
+		}
 	};
 	LyricGenMultiLineControl control;
 
@@ -60,8 +68,16 @@ public class LyricGenMultiLineByWord : LyricBase {
 		control.vertical = vertical;
 		control.autoclear = autoclear;
 		control.active = active;
+		control.font = font;
 	}
 	public override void Clear() {
 		control.Clear();
+	}
+	public override void ShowSampleText(string [] text) {
+		control.SetText(text);
+	}
+
+	public override void Hide() {
+		Clear();
 	}
 }

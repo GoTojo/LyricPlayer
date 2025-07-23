@@ -40,6 +40,15 @@ public class LyricGenUnder1Line : LyricBase {
 		public override void Clear() {
 			text.text = "";
 		}
+		public void SetText(string text) {
+			this.text.text = text;
+		}
+		public void Show() {
+			text.enabled = true;
+		}
+		public void Hide() {
+			text.enabled = false;
+		}
 	};
 	LyricGenControl control;
 
@@ -47,6 +56,16 @@ public class LyricGenUnder1Line : LyricBase {
 		control = new LyricGenControl(position, font, this.transform);
 	}
 	public override void OnParamChanged() {
+		control.active = active;
+		if (active) control.Show();
+		else control.Hide();
 		control.text.transform.position = position;
+		control.font = font;
+	}
+	public override void Clear() {
+		control.Clear();
+	}
+	public override void ShowSampleText(string [] text) {
+		control.SetText(text[0]);
 	}
 }
