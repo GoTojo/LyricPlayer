@@ -2507,7 +2507,7 @@ PrefabInstance:
     - target: {fileID: 5363743894238303143, guid: 4b7c04df60a6b4e878d780bf4ccf8c35,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5363743894238303143, guid: 4b7c04df60a6b4e878d780bf4ccf8c35,
         type: 3}

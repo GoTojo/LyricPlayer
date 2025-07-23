@@ -102,15 +102,14 @@ public class SettingPanelController : MonoBehaviour
 		fontSelector.value = (int)FontResource.Instance.GetFontType(targetLyric.font.name);
 		xinput.text = targetLyric.transform.position.x.ToString();
 		yinput.text = targetLyric.transform.position.y.ToString();
-		targetLyric.OnParamChanged();
 	}
 	public void OnEditItemChanged(int num) {
 		targetLyric.Hide();
 		GetParams();
 		targetLyric.Show();
 	}
-	public void OnFontSelectChanged(int num) {
-
+	public void OnFontSelectChanged() {
+		targetLyric.SetFont(FontResource.Instance.GetFont((FontResource.Type)fontSelector.value));
 	}
 	public void OnInputEndX(string text) {
 		
