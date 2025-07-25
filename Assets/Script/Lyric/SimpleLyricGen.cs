@@ -90,7 +90,7 @@ public class SimpleLyricGen : LyricBase {
 			sentenceLength = sentence.Length;
 		}
 		public void SetText(string text) {
-			char [] words = text.ToCharArray();
+			char[] words = text.ToCharArray();
 			Clear();
 			sentenceLength = words.Length;
 			foreach (char word in words) {
@@ -114,10 +114,41 @@ public class SimpleLyricGen : LyricBase {
 	public override void Clear() {
 		control.Clear();
 	}
-	public override void ShowSampleText(string [] text) {
+	public override void ShowSampleText(string[] text) {
 		control.SetText(text[0]);
 	}
 	public override void Hide() {
 		Clear();
+	}
+	public override bool HasArea() {
+		return true;
+	}
+	public override void SetPosX(float x) {
+		area.x = x;
+		control.area = area;
+	}
+	public override void SetPosY(float y) {
+		area.y = y;
+		control.area = area;
+	}
+	public override void SetPosW(float w) {
+		area.width = w;
+		control.area = area;
+	}
+	public override void SetPosH(float h) {
+		area.height = h;
+		control.area = area;
+	}
+	public override float GetPosX() {
+		return area.x;
+	}
+	public override float GetPosY() {
+		return area.y;
+	}
+	public override float GetAreaW() {
+		return area.width;
+	}
+	public override float GetAreaH() {
+		return area.height;
 	}
 }

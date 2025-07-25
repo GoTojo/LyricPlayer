@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 public class SettingPanelController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class SettingPanelController : MonoBehaviour
 	public TMP_Dropdown fontSelector;
 	public TMP_InputField xinput;
 	public TMP_InputField yinput;
+	public TMP_InputField winput;
+	public TMP_InputField hinput;
 	public TMP_InputField sampleText;
 	public TitleControl titleControl;
 	public LyricGenUnder1Line line;
@@ -100,8 +103,12 @@ public class SettingPanelController : MonoBehaviour
 		if (lyric == null) return;
 		targetLyric = lyric;
 		fontSelector.value = (int)FontResource.Instance.GetFontType(targetLyric.font.name);
-		xinput.text = targetLyric.transform.position.x.ToString();
-		yinput.text = targetLyric.transform.position.y.ToString();
+		xinput.text = targetLyric.GetPosX().ToString();
+		yinput.text = targetLyric.GetPosY().ToString();
+		winput.transform.parent.gameObject.SetActive(targetLyric.HasArea());
+		hinput.transform.parent.gameObject.SetActive(targetLyric.HasArea());
+		winput.text = targetLyric.GetAreaW().ToString();
+		hinput.text = targetLyric.GetAreaH().ToString();
 	}
 	public void OnEditItemChanged(int num) {
 		targetLyric.Hide();
@@ -111,11 +118,25 @@ public class SettingPanelController : MonoBehaviour
 	public void OnFontSelectChanged() {
 		targetLyric.SetFont(FontResource.Instance.GetFont((FontResource.Type)fontSelector.value));
 	}
-	public void OnInputEndX(string text) {
-		
+	public void OnInputEndX() {
+		string text = xinput.text;
+		float x = float.Parse(text);
+		targetLyric.SetPosX(x);
 	}
-	public void OnInputEndY(string text) {
-
+	public void OnInputEndY() {
+		string text = yinput.text;
+		float y = float.Parse(text);	
+		targetLyric.SetPosY(y);
+	}
+	public void OnInputEndW() {
+		string text = winput.text;
+		float w = float.Parse(text);
+		targetLyric.SetPosW(w);
+	}
+	public void OnInputEndH() {
+		string text = hinput.text;
+		float h = float.Parse(text);	
+		targetLyric.SetPosH(h);
 	}
 	public void OnInputEndSampleText(string text) {
 

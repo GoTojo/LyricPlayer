@@ -40,7 +40,7 @@ public class LyricGenMultiLine : LyricBase {
 			line++;
 			waitClear = waitCount;
 		}
-		public void SetText (string [] text) {
+		public void SetText(string[] text) {
 			Clear();
 			for (var i = 0; i < maxLine; i++) {
 				if (text.Length <= i) break;
@@ -68,11 +68,25 @@ public class LyricGenMultiLine : LyricBase {
 		control.Clear();
 	}
 
-	public override void ShowSampleText(string [] text) {
+	public override void ShowSampleText(string[] text) {
 		control.SetText(text);
 	}
 
 	public override void Hide() {
 		Clear();
+	}
+	public override void SetPosX(float x) {
+		area.x = x;
+		control.area = area;
+	}
+	public override void SetPosY(float y) {
+		area.y = y;
+		control.area = area;
+	}
+	public override float GetPosX() {
+		return area.x;
+	}
+	public override float GetPosY() {
+		return area.y;
 	}
 }

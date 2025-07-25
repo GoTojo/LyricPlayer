@@ -65,7 +65,23 @@ public class LyricGenUnder1Line : LyricBase {
 	public override void Clear() {
 		control.Clear();
 	}
-	public override void ShowSampleText(string [] text) {
+	public override void ShowSampleText(string[] text) {
 		control.SetText(text[0]);
+	}
+	public override void SetPosX(float x) {
+		Vector3 pos = control.text.transform.position;
+		pos.x = x;
+		control.text.transform.position = pos;
+	}
+	public override void SetPosY(float y) {
+		Vector3 pos = control.text.transform.position;
+		pos.y = y;
+		control.text.transform.position = pos;
+	}
+	public override float GetPosX() {
+		return control.text.transform.position.x;
+	}
+	public override float GetPosY() {
+		return control.text.transform.position.y;
 	}
 }

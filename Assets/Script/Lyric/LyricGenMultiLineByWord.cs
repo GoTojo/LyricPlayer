@@ -46,11 +46,14 @@ public class LyricGenMultiLineByWord : LyricBase {
 				line++;
 			}
 		}
-		public void SetText (string [] text) {
+		public void SetText(string[] text) {
 			Clear();
 			for (var i = 0; i < maxLine; i++) {
 				if (text.Length < i) break;
-				CreateText(text[i]);
+				string sentence = text[i];
+				for (numOfWord = 0; numOfWord < sentence.Length; numOfWord++) {
+					CreateText(sentence.Substring(numOfWord, 1));
+				}
 				line++;
 			}
 		}
@@ -73,11 +76,25 @@ public class LyricGenMultiLineByWord : LyricBase {
 	public override void Clear() {
 		control.Clear();
 	}
-	public override void ShowSampleText(string [] text) {
+	public override void ShowSampleText(string[] text) {
 		control.SetText(text);
 	}
 
 	public override void Hide() {
 		Clear();
+	}
+	public override void SetPosX(float x) {
+		area.x = x;
+		control.area = area;
+	}
+	public override void SetPosY(float y) {
+		area.y = y;
+		control.area = area;
+	}
+	public override float GetPosX() {
+		return area.x;
+	}
+	public override float GetPosY() {
+		return area.y;
 	}
 }

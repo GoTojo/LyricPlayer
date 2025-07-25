@@ -18,15 +18,34 @@ public abstract class LyricBase : MonoBehaviour
 		active = f;
 		OnParamChanged();
 	}
+	public virtual bool HasArea() {
+		return false;
+	}
 	public virtual void SetPosX(float x) {
+		Vector3 pos = transform.position;
+		pos.x = x;
+		transform.position = pos;
 	}
 	public virtual void SetPosY(float y) {
+		Vector3 pos = transform.position;
+		pos.y = y;
+		transform.position = pos;
+	}
+	public virtual void SetPosW(float w) {
+	}
+	public virtual void SetPosH(float h) {
 	}
 	public virtual float GetPosX() {
 		return this.transform.position.x;
 	}
 	public virtual float GetPosY() {
 		return this.transform.position.y;
+	}
+	public virtual float GetAreaW() {
+		return 0;
+	}
+	public virtual float GetAreaH() {
+		return 0;
 	}
 	public void SetFont(TMP_FontAsset font) {
 		this.font = font;
