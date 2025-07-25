@@ -6,14 +6,14 @@ using System.Collections.Generic;
 
 class LyricGenLineBase : LyricGenBase {
 	public Rect area;
-	protected float textHeight = 2f;
-	protected float textWidth = 2f;
+	protected float textHeight = 1f;
+	protected float textWidth = 1f;
 	protected List<GameObject> lyrics = new List<GameObject>();
 	protected Transform transform;
 	protected int line = 0;
 	public int maxLine = 5;
 	public float scale = 1;
-
+	protected int numOfWord = 0;
 	public bool vertical = false;
 	public LyricGenLineBase(Rect area, float textHeight, float textWidth, TMP_FontAsset font, Transform transform) {
 		this.area = area;
@@ -78,6 +78,11 @@ class LyricGenLineBase : LyricGenBase {
 		return lyric;
 	}
 	protected virtual void GetPosition(ref float x, ref float y) {
+		if (vertical) {
+			y -= textHeight * numOfWord;
+		} else {
+			x += textWidth * numOfWord;
+		}
 	}
 	public override void Clear() {
 		foreach (var lyric in lyrics) {

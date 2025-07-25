@@ -36,7 +36,9 @@ public class LyricGenMultiLine : LyricBase {
 			if (line >= maxLine) {
 				Clear();
 			}
-			CreateText(sentence);
+			for (numOfWord = 0; numOfWord < sentence.Length; numOfWord++) {
+				CreateText(sentence.Substring(numOfWord, 1));
+			}
 			line++;
 			waitClear = waitCount;
 		}
@@ -44,7 +46,9 @@ public class LyricGenMultiLine : LyricBase {
 			Clear();
 			for (var i = 0; i < maxLine; i++) {
 				if (text.Length <= i) break;
-				CreateText(text[i]);
+				for (numOfWord = 0; numOfWord < text[i].Length; numOfWord++) {
+					CreateText(text[i].Substring(numOfWord, 1));
+				}
 				line++;
 			}
 		}

@@ -16,16 +16,8 @@ public class LyricGenMultiLineByWord : LyricBase {
 	public bool autoclear = true;
 	class LyricGenMultiLineControl : LyricGenLineBase {
 		public bool autoclear = true;
-		private int numOfWord = 0;
 		private float measureInterval = 0;
 		public LyricGenMultiLineControl(Rect area, float textHeight, float textWidth, TMP_FontAsset font, Transform transform) : base(area, textHeight, textWidth, font, transform) {
-		}
-		protected override void GetPosition(ref float x, ref float y) {
-			if (vertical) {
-				y -= textHeight * numOfWord;
-			} else {
-				x += textWidth * numOfWord;
-			}
 		}
 		protected override void OnCleared() {
 			numOfWord = 0;
