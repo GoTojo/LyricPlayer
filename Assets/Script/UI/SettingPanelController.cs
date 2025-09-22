@@ -185,6 +185,7 @@ public class SettingPanelController : MonoBehaviour
 
 	}
 	public void OnShowTextButtonClicked() {
+		LyricGenList.Clear();
 		string text = sampleText.text;
 		string [] lines = text.Split('\n');
 		targetLyric.ShowSampleText(lines);
