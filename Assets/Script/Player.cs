@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
 	private Image playButtonImage;
 	private Image repeatButtonImage;
 	private float endTimer = 0;
+	private int numOfMeas;
 
 	// Start is called before the first frame update
 	void Awake() {
@@ -52,7 +53,7 @@ public class Player : MonoBehaviour {
 		textA.text = pointA.value.ToString();
 		textB = pointB.handleRect.GetComponentInChildren<TextMeshProUGUI>();
 		textB.text = pointB.value.ToString();
-		int numOfMeas = SongInfo.GetNumOfMeasure();
+		numOfMeas = SongInfo.GetNumOfMeasure();
 		if (numOfMeas < 0) {
 			numOfMeas = SentenceList.Instance.tracks[0].lyrics.Count;
 		}
@@ -130,6 +131,9 @@ public class Player : MonoBehaviour {
 		smfPlayer.Stop();
 	}
 	private void PlayStart() {
+		if (measure >= numOfMeas - 1) {
+			measure = 0;
+		}
 		LyricData data = SentenceList.Instance.GetSentence(0, measure);
 		LyricGenList.Start(measure);
 		currentMsec = data.msec;
