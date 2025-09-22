@@ -26,8 +26,10 @@ public class Parameter {
 		LightNovelPOP,
 		RocknRollOne
 	};
-	public static string [] GetOptions(string command, int num) {
-		switch (command) {
+	public static string[] GetOptions(string command, int num) {
+		string[] args = command.Split("_");
+		switch (args[0]) {
+		// LyricControls
 		case "Title":
 		case "Line":
 		case "Words":

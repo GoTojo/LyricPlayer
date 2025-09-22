@@ -26,11 +26,13 @@ public class SettingPanelController : MonoBehaviour
 	public LyricGenMultiLineByWord multiWordR;
 	public LyricGenMultiLineByWord multiWordVL;
 	public LyricGenMultiLineByWord multiWordVR;
-	private string [] controlTypes;
+	public LyricControl lyricControl;
+	private string[] controlTypes;
 	private string [] fontTypes;
 	private LyricBase targetLyric;
+	private int curLyric;
 	private bool activated = false;
-	void Awake() {
+	void Start() {
 		controlTypes = Enum.GetNames(typeof(LyricControl.Type));
 		for (var i = 0; i < controlTypes.Length; i++) {
 			TMP_Dropdown.OptionData optionData = new TMP_Dropdown.OptionData(controlTypes[i]);
@@ -42,6 +44,7 @@ public class SettingPanelController : MonoBehaviour
 			fontSelector.options.Add(optionData);
 		}
 		sampleText.text = "さんぷるてきすと";
+		RestoreParams();
 		GetParams();
 	}
 	void Update() {
@@ -99,7 +102,8 @@ public class SettingPanelController : MonoBehaviour
 		settingPanel.SetActive(false);
 	}
 	private void GetParams() {
-		LyricBase lyric = GetLyricObj((LyricControl.Type)edititem.value);
+		curLyric = edititem.value; 
+		LyricBase lyric = GetLyricObj((LyricControl.Type)curLyric);
 		if (lyric == null) return;
 		targetLyric = lyric;
 		fontSelector.value = (int)FontResource.Instance.GetFontType(targetLyric.font.name);
@@ -107,8 +111,8 @@ public class SettingPanelController : MonoBehaviour
 		yinput.text = targetLyric.GetPosY().ToString();
 		winput.transform.parent.gameObject.SetActive(targetLyric.HasArea());
 		hinput.transform.parent.gameObject.SetActive(targetLyric.HasArea());
-		winput.text = targetLyric.GetAreaW().ToString();
-		hinput.text = targetLyric.GetAreaH().ToString();
+		winput.text = targetLyric.GetPosW().ToString();
+		hinput.text = targetLyric.GetPosH().ToString();
 	}
 	public void OnEditItemChanged(int num) {
 		targetLyric.Hide();
@@ -116,27 +120,66 @@ public class SettingPanelController : MonoBehaviour
 		targetLyric.Show();
 	}
 	public void OnFontSelectChanged() {
-		targetLyric.SetFont(FontResource.Instance.GetFont((FontResource.Type)fontSelector.value));
+		int font = fontSelector.value;
+		SetFont(targetLyric, (FontResource.Type)font);
+		StoreParam("FONT", font);
+	}
+	private void SetFont(LyricBase lyric, FontResource.Type type) {
+		lyric.SetFont(FontResource.Instance.GetFont(type));
 	}
 	public void OnInputEndX() {
 		string text = xinput.text;
 		float x = float.Parse(text);
-		targetLyric.SetPosX(x);
+		lyricControl.SetPosition(targetLyric, "POSX", x);
+		StoreParam("POSX", x);
 	}
 	public void OnInputEndY() {
 		string text = yinput.text;
 		float y = float.Parse(text);	
-		targetLyric.SetPosY(y);
+		lyricControl.SetPosition(targetLyric, "POSY", y);
+		StoreParam("POSY", y);
 	}
 	public void OnInputEndW() {
 		string text = winput.text;
 		float w = float.Parse(text);
-		targetLyric.SetPosW(w);
+		lyricControl.SetPosition(targetLyric, "POSW", w);
+		StoreParam("POSW", w);
 	}
 	public void OnInputEndH() {
 		string text = hinput.text;
-		float h = float.Parse(text);	
-		targetLyric.SetPosH(h);
+		float h = float.Parse(text);
+		lyricControl.SetPosition(targetLyric, "POSH", h);
+		StoreParam("POSH", h);
+	}
+	private void StoreParam(string param, float value) {
+		int songnum = PlayerPrefs.GetInt("Song");
+		PlayerPrefs.SetFloat($"SONG{songnum}_{controlTypes[curLyric]}_{param}", value);
+	}
+	private void StoreParam(string param, int value) {
+		int songnum = PlayerPrefs.GetInt("Song");
+		PlayerPrefs.SetInt($"SONG{songnum}_{controlTypes[curLyric]}_{param}", value);
+	}
+	private void SetPosition(LyricBase lyricObj, string type, string param) {
+		int songnum = PlayerPrefs.GetInt("Song");
+		string key = $"SONG{songnum}_{type}_{param}";
+		if (PlayerPrefs.HasKey(key)) {
+			lyricControl.SetPosition(lyricObj, param, PlayerPrefs.GetFloat(key));
+		}
+	}
+	private void RestoreParams() {
+		int songnum = PlayerPrefs.GetInt("Song");
+		for (var type = 0; type < controlTypes.Length; type++) {
+			LyricBase lyricObj = GetLyricObj((LyricControl.Type)type);
+			string lyricType = controlTypes[type];
+			SetPosition(lyricObj, lyricType, "POSX");
+			SetPosition(lyricObj, lyricType, "POSY");
+			SetPosition(lyricObj, lyricType, "POSW");
+			SetPosition(lyricObj, lyricType, "POSH");
+			string key = $"SONG{songnum}_{lyricType}_FONT";
+			if (PlayerPrefs.HasKey(key)) {
+				SetFont(lyricObj, (FontResource.Type)PlayerPrefs.GetInt(key));
+			}
+		}
 	}
 	public void OnInputEndSampleText(string text) {
 

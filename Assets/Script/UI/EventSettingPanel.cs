@@ -10,8 +10,9 @@ public class EventSettingPanel : MonoBehaviour {
 	public GameObject eventSettingPanel;
 	private TMP_Dropdown commandSelector;
 	private Vector3 position = new Vector3(-700, 50, 0);
-	private float width = 160;
+	private float width = 300;
 	private GameObject selectorPrefab;
+	private GameObject inputPrefab;
 	private string [] commands;
 	private List<TMP_Dropdown> optionSelectors = new List<TMP_Dropdown>();
 	private TextMeshProUGUI infotext;
@@ -21,6 +22,7 @@ public class EventSettingPanel : MonoBehaviour {
 	private int num;
 	void Awake() {
 		selectorPrefab = (GameObject)Resources.Load("UI/ParamSelector");
+		inputPrefab = (GameObject)Resources.Load("UI/ValueInput");
 		commands = Enum.GetNames(typeof(Parameter.Command));
 		string [] options = new string [commands.Length + 1];
 		options[0] = "-----";
@@ -51,14 +53,29 @@ public class EventSettingPanel : MonoBehaviour {
 		return option;
 	}
 	private void CreateOptions() {
+		List<int> optionValues = new List<int>();
+		for (var i = 0; i < optionSelectors.Count; i++) {
+			optionValues.Add(optionSelectors[i].value);
+		}
 		ClearOptions();
 		var value = commandSelector.value;
 		if (value == 0) return;
 		string command = commands[value - 1];
 		for (var i = 0; true; i++) {
-			string [] options = Parameter.GetOptions(command, i);
+			string[] options = Parameter.GetOptions(command, i);
 			if (options == null) break;
+			int selected = (i < optionValues.Count) ? optionValues[i] : 0;
 			CreateOption(i, options);
+			if (options[selected] == "VARIABLE") {
+				GameObject instantiate = Instantiate(inputPrefab, optionSelectors[i].transform);
+				TMP_InputField inputField = instantiate.GetComponentInChildren<TMP_InputField>();
+				float val = 0;
+				inputField.text = $"{val}";
+			} else {
+				optionSelectors[i].value = selected;
+				optionSelectors[i].onValueChanged.AddListener((value) => OnParamChanged());
+			}
+			command = $"{command}_{options[selected]}";
 		}
 	}
 	private void Setup(int track, int measure, int beat, int num) {
@@ -78,14 +95,18 @@ public class EventSettingPanel : MonoBehaviour {
 				commandSelector.value = commandIndex + 1;
 				string command = commands[commandIndex];
 				for (var i = 0; true; i++) {
-					string [] options = Parameter.GetOptions(command, i);
+					string[] options = Parameter.GetOptions(command, i);
 					if (options == null) break;
-					if (i + 1 < args.Length) {
+					if (options[0] == "VARIABLE") {
+						TMP_InputField input = optionSelectors[i].transform.parent.GetComponentInChildren<TMP_InputField>();
+						if (input) input.text = args[i + 1];
+					} else if (i + 1 < args.Length) {
 						int selected = Array.IndexOf(options, args[i + 1]);
 						if (selected >= 0) {
 							if (optionSelectors.Count > i) optionSelectors[i].value = selected;
 						}
 					}
+					command += $"_{args[i + 1]}";
 				}
 			}
 		}
@@ -108,9 +129,14 @@ public class EventSettingPanel : MonoBehaviour {
 			commandtext = command;
 			for (var i = 0; i < optionSelectors.Count; i++) {
 				TMP_Dropdown obj = optionSelectors[i];
-				string [] options = Parameter.GetOptions(command, i);
+				string[] options = Parameter.GetOptions(commandtext, i);
 				if (options != null) {
-					commandtext += $"_{options[obj.value]}";
+					if (options[obj.value] == "VARIABLE") {
+						TMP_InputField input = obj.transform.parent.GetComponentInChildren<TMP_InputField>();
+						commandtext += $"_{input.text}";
+					} else {
+						commandtext += $"_{options[obj.value]}";
+					}
 				}
 			}
 		}
@@ -118,6 +144,9 @@ public class EventSettingPanel : MonoBehaviour {
 		SentenceList.Instance.SetControl(track + 1, measure, beat, num, commandtext);
 	}
 	public void OnValueChanged() {
+		CreateOptions();
+	}
+	public void OnParamChanged() {
 		CreateOptions();
 	}
 	public void OnEventSettingCancel() {

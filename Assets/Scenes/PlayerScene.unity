@@ -7199,7 +7199,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -14588,6 +14588,7 @@ MonoBehaviour:
   text: {fileID: 1867321290}
   player: {fileID: 136457267}
   eventSettingPanel: {fileID: 1823815577}
+  isLyricEditing: 0
 --- !u!114 &1823815577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14632,6 +14633,7 @@ MonoBehaviour:
   multiWordR: {fileID: 1378334934}
   multiWordVL: {fileID: 1131143208}
   multiWordVR: {fileID: 1536350844}
+  lyricControl: {fileID: 1035308292}
 --- !u!1 &1830464501
 GameObject:
   m_ObjectHideFlags: 0
