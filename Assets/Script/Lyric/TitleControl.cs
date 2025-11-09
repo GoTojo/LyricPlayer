@@ -8,12 +8,16 @@ public class TitleControl : LyricBase
 	public TextMeshPro title;
 	string titleText;
 	void Start() {
-		titleText = SongInfo.GetTitle();
+		int songnum = PlayerPrefs.GetInt("Song");
+		titleText = SongInfo.GetTitle(songnum);
+		title.transform.parent = this.transform;
 	}
 	public override void OnParamChanged() {
 		if (active) title.text = titleText;
 		title.font = font;
 		title.enabled = active;
+		title.fontSize = fontSize;
+
 	}
 	public override void Clear() {
 		title.text = "";

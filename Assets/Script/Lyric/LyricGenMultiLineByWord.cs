@@ -53,7 +53,7 @@ public class LyricGenMultiLineByWord : LyricBase {
 	};
 	LyricGenMultiLineControl control;
 
-	void Start() {
+	void Awake() {
 		control = new LyricGenMultiLineControl(area, textHeight, textWidth, font, this.transform);
 	}
 
@@ -65,6 +65,7 @@ public class LyricGenMultiLineByWord : LyricBase {
 		control.autoclear = autoclear;
 		control.active = active;
 		control.font = font;
+		control.fontSize = fontSize;
 	}
 	public override void Clear() {
 		control.Clear();

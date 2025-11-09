@@ -10,9 +10,10 @@ using TMPro;
 public abstract class LyricBase : MonoBehaviour
 {
 	public TMP_FontAsset font;
+	public float fontSize = 16;
 	public bool active = false;
 	void Awake() {
-		LyricList.lyrics.Add(this);
+		Lyrics.lyrics.Add(this);
 	}
 	public void SetActive(bool f) {
 		active = f;
@@ -51,6 +52,10 @@ public abstract class LyricBase : MonoBehaviour
 		this.font = font;
 		OnParamChanged();
 	}
+	public void SetFontSize(float size) {
+		this.fontSize = size;
+		OnParamChanged();
+	}
 	public TMP_FontAsset GetFont() {
 		return font;
 	}
@@ -67,7 +72,7 @@ public abstract class LyricBase : MonoBehaviour
 	public abstract void Clear();
 }
 
-public class LyricList {
+public class Lyrics {
 	static public List<LyricBase> lyrics = new List<LyricBase>();
 	static public void Reset() {
 		foreach (LyricBase lyric in lyrics) {

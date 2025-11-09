@@ -52,6 +52,10 @@ public class SongInfo
 	{
 		return songtitle[curSongnum];
 	}
+	public static string GetTitle(int songnum)
+	{
+		return songtitle[songnum];
+	}
 	public static string GetBaseNameAscii()
 	{
 		return songbasenamesAscii[curSongnum];
