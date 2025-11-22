@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using System;
 using UnityEngine.AI;
+using JetBrains.Annotations;
 
 public class LyricGenMultiLine : LyricBase {
 	public Rect area = new Rect(-6, -4, 20, 6);
