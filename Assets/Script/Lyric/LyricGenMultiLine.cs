@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using System;
 using UnityEngine.AI;
+using JetBrains.Annotations;
 
 public class LyricGenMultiLine : LyricBase {
 	public Rect area = new Rect(-6, -4, 20, 6);
@@ -56,8 +57,9 @@ public class LyricGenMultiLine : LyricBase {
 	};
 	LyricGenMultiLineControl control;
 
-	void Awake() {
+	protected override void Awake() {
 		control = new LyricGenMultiLineControl(area, textHeight, textWidth, font, this.transform);
+		base.Awake();
 	}
 
 	public override void OnParamChanged() {

@@ -81,7 +81,7 @@ public class SentenceList
 		if (track > tracks.Count) return false;
 		if (track < 1) return false;
 		Track trackData = tracks[track - 1];
-		if (measure > trackData.lyrics.Count) return false;
+		if (measure >= trackData.lyrics.Count) return false;
 		return true;
 	}
 	public LyricData GetSentence(int track, int measure) {
@@ -135,6 +135,10 @@ public class SentenceList
 			}
 			tracks.Add(trackData);
 		}
+	}
+	public void Save()
+	{
+		Save(SongInfo.GetInfoPath());
 	}
 	private void Save(string path)
 	{

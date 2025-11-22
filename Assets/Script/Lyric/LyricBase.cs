@@ -12,7 +12,7 @@ public abstract class LyricBase : MonoBehaviour
 	public TMP_FontAsset font;
 	public float fontSize = 16;
 	public bool active = false;
-	void Awake() {
+	protected virtual void Awake() {
 		Lyrics.lyrics.Add(this);
 	}
 	public void SetActive(bool f) {
@@ -55,6 +55,9 @@ public abstract class LyricBase : MonoBehaviour
 	public void SetFontSize(float size) {
 		this.fontSize = size;
 		OnParamChanged();
+	}
+	public float GetFontSize() {
+		return this.fontSize;
 	}
 	public TMP_FontAsset GetFont() {
 		return font;

@@ -99,8 +99,9 @@ public class SimpleLyricGen : LyricBase {
 		}
 	};
 	LyricGenControl control;
-	void Awake() {
+	protected override void Awake() {
 		control = new LyricGenControl(area, sizeMin, sizeMax, rotateAngle, this.transform);
+		base.Awake();
 	}
 	public override void OnParamChanged() {
 		control.active = active;
