@@ -83,6 +83,12 @@ public class LyricControl : MonoBehaviour {
 		}
 		return lyric;
 	}
+	public void SetFontSize(LyricBase lyric, float value) {
+		lyric.SetFontSize(value);
+	}
+	public float GetFontSize(LyricBase lyric) {
+		return lyric.GetFontSize();
+	}
 	public void SetPosition(LyricBase lyric, string param, float value) {
 		switch (param) {
 		case "POSX":

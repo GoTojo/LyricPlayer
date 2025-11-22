@@ -64,8 +64,10 @@ public class LyricGenUnder1Line : LyricBase {
 	};
 	LyricGenControl control;
 
-	void Awake() {
+	protected override void Awake() {
 		control = new LyricGenControl(position, font, this.transform);
+		OnParamChanged();
+		base.Awake();
 	}
 	public override void OnParamChanged() {
 		control.active = active;

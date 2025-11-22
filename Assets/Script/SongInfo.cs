@@ -6,6 +6,8 @@ public class SongInfo
 {
 	private static int curSongnum = 0;
     private static string[] songbasenamesAscii = new string[] {
+		@"zutto",
+		@"ippo",
 		@"tabeyo",
 		@"madakana",
 		// @"遥かな旅路",
@@ -13,6 +15,8 @@ public class SongInfo
 		// @"約束の場所へ"
 	};
     private static string [] songtitle = new string [] {
+		@"これからずっと",
+		@"明日への一歩",
 		@"らーめんたべよう",
 		@"らーめんまだかな",
 		// @"遥かな旅路",
@@ -20,6 +24,8 @@ public class SongInfo
 		// @"約束の場所へ"
 	};
 	private static int[] numOfMeasure{ get; } = new int[] {
+		57,  // @"これからずっと"
+		66,  // @"明日への一歩"
 		72, // @"らーめんたべよう",
 		72, // @"らーめんまだかな",
 		// -1, // @"遥かな旅路",

@@ -17,6 +17,7 @@ public class EditPanel : MonoBehaviour {
 	private GameObject eventButton;
 	private List<GameObject> textTrackNumbers = new List<GameObject>();
 	public bool isLyricEditing = false; 
+	public bool saveFile = false;
 
 	// Start is called before the first frame update
 	void Start() {
@@ -56,6 +57,10 @@ public class EditPanel : MonoBehaviour {
 	}
 	public void OnEventSettingCancel() {
 		CreateOption();
+	}
+	public void OnSaveButtonClick() {
+		if (!saveFile) return;
+		SentenceList.Instance.Save();
 	}
 	private void CreateOption() {
 		LyricData data = SentenceList.Instance.GetSentence(trackInput.value, measure);

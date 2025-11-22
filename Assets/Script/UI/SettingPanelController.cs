@@ -10,6 +10,7 @@ public class SettingPanelController : MonoBehaviour
 	public GameObject settingPanel;
 	public TMP_Dropdown edititem;
 	public TMP_Dropdown fontSelector;
+	public TMP_InputField fontSizeInput;
 	public TMP_InputField xinput;
 	public TMP_InputField yinput;
 	public TMP_InputField winput;
@@ -107,6 +108,7 @@ public class SettingPanelController : MonoBehaviour
 		if (lyric == null) return;
 		targetLyric = lyric;
 		fontSelector.value = (int)FontResource.Instance.GetFontType(targetLyric.font.name);
+		fontSizeInput.text = targetLyric.GetFontSize().ToString();
 		xinput.text = targetLyric.GetPosX().ToString();
 		yinput.text = targetLyric.GetPosY().ToString();
 		winput.transform.parent.gameObject.SetActive(targetLyric.HasArea());
@@ -128,6 +130,12 @@ public class SettingPanelController : MonoBehaviour
 	}
 	private void SetFont(LyricBase lyric, FontResource.Type type) {
 		lyric.SetFont(FontResource.Instance.GetFont(type));
+	}
+	public void OnInputEndFontSize() {
+		string text = fontSizeInput.text;
+		float size = float.Parse(text);
+		lyricControl.SetFontSize(targetLyric, size);
+		StoreParam("FONTSIZE", size);
 	}
 	public void OnInputEndX() {
 		string text = xinput.text;
@@ -173,13 +181,17 @@ public class SettingPanelController : MonoBehaviour
 		for (var type = 0; type < controlTypes.Length; type++) {
 			LyricBase lyricObj = GetLyricObj((LyricControl.Type)type);
 			string lyricType = controlTypes[type];
-			SetPosition(lyricObj, lyricType, "POSX");
+			SetPosition(lyricObj, lyricType, "POSX"); 
 			SetPosition(lyricObj, lyricType, "POSY");
 			SetPosition(lyricObj, lyricType, "POSW");
 			SetPosition(lyricObj, lyricType, "POSH");
 			string key = $"SONG{songnum}_{lyricType}_FONT";
 			if (PlayerPrefs.HasKey(key)) {
 				SetFont(lyricObj, (FontResource.Type)PlayerPrefs.GetInt(key));
+			}
+			key = $"SONG{songnum}_{lyricType}_FONTSIZE";
+			if (PlayerPrefs.HasKey(key)) {
+				lyricControl.SetFontSize(lyricObj, PlayerPrefs.GetFloat(key));
 			}
 		}
 	}

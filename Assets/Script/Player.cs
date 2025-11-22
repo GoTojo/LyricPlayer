@@ -6,11 +6,12 @@ using UnityEngine.UI;
 using TMPro;
 
 public class Player : MonoBehaviour {
-	private static SMFPlayer smfPlayer;
+	public static SMFPlayer smfPlayer;
 	private AudioSource audioSource;
 	public int songnum = 0;
 	public int measure = 0;
 	private uint currentMsec = 0;
+	public EventListener eventListener;
 	public GameObject editPanel;
 	public GameObject transportPanel;
 	public GameObject settingPanel;
@@ -30,12 +31,14 @@ public class Player : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void Awake() {
+		PlayerPrefs.SetInt("Song", songnum);
 		MidiWatcher midiWatcher = MidiWatcher.Instance;
 		midiWatcher.onMidiIn += MIDIIn;
 		midiWatcher.onLyricIn += LyricIn;
 		midiWatcher.onTempoIn += TempoIn;
 		midiWatcher.onBeatIn += BeatIn;
 		midiWatcher.onMeasureIn += MeasureIn;
+		midiWatcher.onEventIn += EventIn;
 
 		SongInfo.SetCurSongnum(songnum);
 		smfPlayer = new SMFPlayer(SongInfo.GetSMFPath(), SongInfo.GetNumOfMeasure());
@@ -71,7 +74,6 @@ public class Player : MonoBehaviour {
 	void Start() {
 	}
 
-	// Update is called once per frame
 	void Update() {
 		smfPlayer.Update();
 		if (smfPlayer.isPlaying()) {
@@ -122,7 +124,7 @@ public class Player : MonoBehaviour {
 	public void MeasureIn(int measure, int measureInterval, uint currentMsec) {
 	}
 	public void EventIn(MIDIHandler.Event playerEvent) {
-		Debug.Log(playerEvent.ToString());
+		// Debug.Log(playerEvent.ToString());
 	}
 	private void PlayStop() {
 		audioSource.Stop();
@@ -135,6 +137,8 @@ public class Player : MonoBehaviour {
 			measure = 0;
 		}
 		LyricData data = SentenceList.Instance.GetSentence(0, measure);
+		Lyrics.Reset();
+		eventListener.UpdateControl(measure);
 		LyricGenList.Start(measure);
 		currentMsec = data.msec;
 		smfPlayer.Start(currentMsec);

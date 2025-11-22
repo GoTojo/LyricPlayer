@@ -145,6 +145,9 @@ public class SMFPlayer
 		while (currentTime >= nextEventTime) {
 			UInt32 nexttime = tickup();
 			if (nexttime == UInt32.MaxValue) {
+				if (currentMeasure == numOfMeasure) {
+					isEnd = true;
+				}
 				Stop();
 				break;
 			}
@@ -539,35 +542,25 @@ public class SMFPlayer
 				CheckBeat();
 				currentTick++;
 			} while (!allIsEnd);
-			{
-				byte[] data = midiEvents[midiEvents.Count - 1].data;
-				if (data[0] == typeBeat && data[1] == 0) {
-					// 最後のデータがMeasureとBeat0の場合は削除する　（EndOfTrackで作られたと思われる)
-					midiEvents.RemoveAt(midiEvents.Count - 1);
-					midiEvents.RemoveAt(midiEvents.Count - 1);
-					currentMeasure--;
-				}
-			}
 			int realMeasure = currentMeasure;
 			if (currentMeasure < totalMeasure) {
 				byte[] data;
+				// measureイベントを探す
 				int lastMeasureIndex = midiEvents.Count - 1;
+				int beatCount = 0;
 				while (lastMeasureIndex >= 0) {
 					data = midiEvents[lastMeasureIndex].data;
 					if (data[0] == typeMeasure) break;
+					else if (data[0] == typeBeat) beatCount++;
 					lastMeasureIndex--;
 				}
-				int numOfEvent = midiEvents.Count - lastMeasureIndex;
-				MIDIEvent[] measEvents = new MIDIEvent[numOfEvent];
-				midiEvents.CopyTo(lastMeasureIndex, measEvents, 0, numOfEvent);
-				for (; currentMeasure <= totalMeasure; currentMeasure++) {
-					for (var i = 0; i < measEvents.Length; i++) {
-						byte[] newData = new byte[measEvents[i].data.Length];
-						Array.Copy(measEvents[i].data, newData, measEvents[i].data.Length);
-						if (newData[0] == typeMeasure) {
-							newData[1] = (byte)currentMeasure;
-						}
-						Add(measEvents[i].deltaTime, newData);
+				for (var i = beatCount; i < beat.count; i++) {
+					AddBeat(ticksForBeat);
+				}
+				while (currentMeasure <= totalMeasure) {
+					AddMeasure(ticksForBeat);
+					for (var i = 1; i < beat.count; i++) { // 1小節めはAddMeasureで追加済み
+						AddBeat(ticksForBeat);
 					}
 				}
 			}
@@ -595,7 +588,7 @@ public class SMFPlayer
 			// 		break;
 			// 	}
 			// }
-			// UnityEngine.Debug.Log($"realMeasure: {realMeasure}, numOfMeasure: {numOfMeasure}");
+			UnityEngine.Debug.Log($"realMeasure: {realMeasure}, numOfMeasure: {numOfMeasure}");
 		}
 		public override void Reset()
 		{
@@ -634,9 +627,10 @@ public class SMFPlayer
 		}
 		private void SetBeat(int unit, int count)
 		{
+			if (unit == 0) unit = 4;
 			beat.unit = unit;
 			beat.count = count;
-			ticksForBeat = (int)player.tpqn * 4 / unit;
+			ticksForBeat = (int)player.tpqn * count / unit;
 			ticksForMeasure = ticksForBeat * beat.count;
 
 			byte [] data = new byte [3];

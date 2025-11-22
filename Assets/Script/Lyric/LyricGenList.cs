@@ -7,7 +7,6 @@ using System.Collections.Generic;
 class LyricGenList {
 	static public List<LyricGenBase> lyricGens = new List<LyricGenBase>();
 	static public void Start(int meas) {
-		Lyrics.Reset();
 		foreach (var lyricGen in lyricGens) {
 			lyricGen.Start(meas);
 		}

@@ -35,7 +35,7 @@ public class MIDIEventMap : MIDIHandler {
 		this.player = player;
 		numOfMeasure = player.numOfMeasure;
 		numOfTrack = player.numOfTrack;
-		for (int meas = 0; meas < numOfMeasure; meas++) {
+		for (int meas = 0; meas <= numOfMeasure + 1; meas++) {
 			var tracks = new List<TrackData>();
 			for (int track = 0; track < numOfTrack; track++) {
 				TrackData trackData = new TrackData();
@@ -92,7 +92,11 @@ public class MIDIEventMap : MIDIHandler {
 		if (measure < 0) {
 			return;
 		}
+		if (beats.Count <= measure) {
+			return;
+		}
 		currentMeasure = measure;
+		// Debug.Log($"beats.Count:{beats.Count}, currentMeasure:{currentMeasure}");
 		SMFPlayer.Beat beat = beats[currentMeasure];
 		beat.count = player.beat.count;
 		beat.unit = player.beat.unit;

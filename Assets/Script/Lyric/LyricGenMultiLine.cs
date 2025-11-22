@@ -56,8 +56,9 @@ public class LyricGenMultiLine : LyricBase {
 	};
 	LyricGenMultiLineControl control;
 
-	void Awake() {
+	protected override void Awake() {
 		control = new LyricGenMultiLineControl(area, textHeight, textWidth, font, this.transform);
+		base.Awake();
 	}
 
 	public override void OnParamChanged() {
