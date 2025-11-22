@@ -1,0 +1,2616 @@
+{
+    "tracks": [
+        {
+            "id": 1,
+            "active": true,
+            "lyrics": [
+                {
+                    "measure": 0,
+                    "msec": 0,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": [
+                                "Line_On"
+                            ]
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 1,
+                    "msec": 1516,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 2,
+                    "msec": 3032,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 3,
+                    "msec": 4548,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": [
+                                "Title_On"
+                            ]
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 4,
+                    "msec": 6064,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 5,
+                    "msec": 7580,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 6,
+                    "msec": 9096,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 7,
+                    "msec": 10612,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 8,
+                    "msec": 12128,
+                    "sentence": "さあ",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "Title_Off",
+                                "MultiWordL_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 9,
+                    "msec": 13644,
+                    "sentence": "アラーム",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 10,
+                    "msec": 15160,
+                    "sentence": "止めて",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 11,
+                    "msec": 16676,
+                    "sentence": "あたらしい今日だよ",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 12,
+                    "msec": 18192,
+                    "sentence": "ドアを",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordL_Off",
+                                "MultiWordR_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 13,
+                    "msec": 19708,
+                    "sentence": "開けて",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 14,
+                    "msec": 21224,
+                    "sentence": "踏みだそう",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 15,
+                    "msec": 22740,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 16,
+                    "msec": 24256,
+                    "sentence": "見知らぬ",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordR_Off",
+                                "MultiWordVL_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 17,
+                    "msec": 25772,
+                    "sentence": "明日への",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 18,
+                    "msec": 27288,
+                    "sentence": "第一歩",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 19,
+                    "msec": 28804,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 20,
+                    "msec": 30320,
+                    "sentence": "輝く未来に",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordVL_Off",
+                                "MultiWordVR_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 21,
+                    "msec": 31836,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 22,
+                    "msec": 33352,
+                    "sentence": "続いてる",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 23,
+                    "msec": 34868,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 24,
+                    "msec": 36384,
+                    "sentence": "それでも",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordVR_Off",
+                                "MultiL_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 25,
+                    "msec": 37900,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 26,
+                    "msec": 39416,
+                    "sentence": "くじけそうになったら",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 27,
+                    "msec": 40932,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 28,
+                    "msec": 42448,
+                    "sentence": "お湯を沸かして",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiL_Off",
+                                "MultiR_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 29,
+                    "msec": 43964,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 30,
+                    "msec": 45480,
+                    "sentence": "ラーメン食べよう",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiR_Off",
+                                "Words_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 31,
+                    "msec": 46996,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 32,
+                    "msec": 48512,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 33,
+                    "msec": 50028,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordL_On",
+                                "Words_Off"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 34,
+                    "msec": 51544,
+                    "sentence": "お湯を入れたら",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiR_Off",
+                                "MultiWordL_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 35,
+                    "msec": 53060,
+                    "sentence": "３分待つよ",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordL_Off",
+                                "Words_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 36,
+                    "msec": 54576,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 37,
+                    "msec": 56092,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 38,
+                    "msec": 57608,
+                    "sentence": "確かな未来が",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordR_On"
+                            ]
+                        },
+                        {
+                            "controls": [
+                                "Words_Off"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 39,
+                    "msec": 59124,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 40,
+                    "msec": 60640,
+                    "sentence": "来るはずさ",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordR_Off",
+                                "Words_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 41,
+                    "msec": 62156,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 42,
+                    "msec": 63672,
+                    "sentence": "お湯を入れたら",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordL_On",
+                                "Words_Off"
+                            ]
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 43,
+                    "msec": 65188,
+                    "sentence": "３分待つよ",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiWordL_Off",
+                                "Words_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 44,
+                    "msec": 66704,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 45,
+                    "msec": 68220,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 46,
+                    "msec": 69736,
+                    "sentence": "いつか",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiL_On"
+                            ]
+                        },
+                        {
+                            "controls": [
+                                "Words_Off"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 47,
+                    "msec": 71252,
+                    "sentence": "そのとき",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 48,
+                    "msec": 72768,
+                    "sentence": "きっと来る",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 49,
+                    "msec": 74284,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 50,
+                    "msec": 75800,
+                    "sentence": "準備は出来てる",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": [
+                                "MultiL_Off",
+                                "MultiR_On"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "measure": 51,
+                    "msec": 77316,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 52,
+                    "msec": 78832,
+                    "sentence": "進むんだ",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 53,
+                    "msec": 80348,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 54,
+                    "msec": 81864,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 55,
+                    "msec": 83380,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 56,
+                    "msec": 84896,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 57,
+                    "msec": 86412,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 58,
+                    "msec": 87928,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 59,
+                    "msec": 89444,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 60,
+                    "msec": 90960,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 61,
+                    "msec": 92476,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 62,
+                    "msec": 93992,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 63,
+                    "msec": 95508,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 64,
+                    "msec": 97024,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 65,
+                    "msec": 98540,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 66,
+                    "msec": 100056,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "active": true,
+            "lyrics": [
+                {
+                    "measure": 0,
+                    "msec": 0,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 1,
+                    "msec": 1516,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 2,
+                    "msec": 3032,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 3,
+                    "msec": 4548,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 4,
+                    "msec": 6064,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 5,
+                    "msec": 7580,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 6,
+                    "msec": 9096,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 7,
+                    "msec": 10612,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 8,
+                    "msec": 12128,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 9,
+                    "msec": 13644,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 10,
+                    "msec": 15160,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 11,
+                    "msec": 16676,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 12,
+                    "msec": 18192,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 13,
+                    "msec": 19708,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 14,
+                    "msec": 21224,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 15,
+                    "msec": 22740,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 16,
+                    "msec": 24256,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 17,
+                    "msec": 25772,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 18,
+                    "msec": 27288,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 19,
+                    "msec": 28804,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 20,
+                    "msec": 30320,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 21,
+                    "msec": 31836,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 22,
+                    "msec": 33352,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 23,
+                    "msec": 34868,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 24,
+                    "msec": 36384,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 25,
+                    "msec": 37900,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 26,
+                    "msec": 39416,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 27,
+                    "msec": 40932,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 28,
+                    "msec": 42448,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 29,
+                    "msec": 43964,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 30,
+                    "msec": 45480,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 31,
+                    "msec": 46996,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 32,
+                    "msec": 48512,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 33,
+                    "msec": 50028,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 34,
+                    "msec": 51544,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 35,
+                    "msec": 53060,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 36,
+                    "msec": 54576,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 37,
+                    "msec": 56092,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 38,
+                    "msec": 57608,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 39,
+                    "msec": 59124,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 40,
+                    "msec": 60640,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 41,
+                    "msec": 62156,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 42,
+                    "msec": 63672,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 43,
+                    "msec": 65188,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 44,
+                    "msec": 66704,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 45,
+                    "msec": 68220,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 46,
+                    "msec": 69736,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 47,
+                    "msec": 71252,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 48,
+                    "msec": 72768,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 49,
+                    "msec": 74284,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 50,
+                    "msec": 75800,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 51,
+                    "msec": 77316,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 52,
+                    "msec": 78832,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 53,
+                    "msec": 80348,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 54,
+                    "msec": 81864,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 55,
+                    "msec": 83380,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 56,
+                    "msec": 84896,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 57,
+                    "msec": 86412,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 58,
+                    "msec": 87928,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 59,
+                    "msec": 89444,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 60,
+                    "msec": 90960,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 61,
+                    "msec": 92476,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 62,
+                    "msec": 93992,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 63,
+                    "msec": 95508,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 64,
+                    "msec": 97024,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 65,
+                    "msec": 98540,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                },
+                {
+                    "measure": 66,
+                    "msec": 100056,
+                    "sentence": "",
+                    "beats": [
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        },
+                        {
+                            "controls": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
